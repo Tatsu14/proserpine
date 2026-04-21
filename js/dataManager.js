@@ -13,18 +13,18 @@ import {
   serverTimestamp 
 } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
 
-const OFF_SEARCH_URL = 'https://world.openfoodfacts.org/api/v2/search';
-const OFF_PRODUCT_URL = 'https://world.openfoodfacts.org/api/v2/product';
 
 export const DataManager = {
   /**
-   * Recherche des produits via Open Food Facts
+   * Recherche des produits via le proxy Vercel
    */
   async searchProducts(queryStr) {
-    const url = `${OFF_SEARCH_URL}?search_terms=${encodeURIComponent(queryStr)}&fields=code,product_name_fr,product_name,brands,image_small_url&page_size=8&json=1`;
+    const fields = 'code,product_name_fr,product_name,brands,image_small_url';
+    const url = `/api/off-proxy?query=${encodeURIComponent(queryStr)}&fields=${fields}`;
+    
     try {
-      const response = await fetch(url, { mode: 'cors' });
-      if (!response.ok) throw new Error('Erreur réseau');
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Erreur réseau via proxy');
       const data = await response.json();
       return data.products || [];
     } catch (error) {
@@ -34,13 +34,15 @@ export const DataManager = {
   },
 
   /**
-   * Récupère les détails complets d'un produit
+   * Récupère les détails complets d'un produit via le proxy Vercel
    */
   async fetchFullProduct(barcode) {
-    const url = `${OFF_PRODUCT_URL}/${barcode}.json?fields=code,product_name_fr,product_name,brands,image_front_url,packaging_tags,origins_tags,labels_tags,nova_group,ecoscore_data,packaging,categories_tags`;
+    const fields = 'code,product_name_fr,product_name,brands,image_front_url,packaging_tags,origins_tags,labels_tags,nova_group,ecoscore_data,packaging,categories_tags';
+    const url = `/api/off-proxy?barcode=${barcode}&fields=${fields}`;
+    
     try {
-      const response = await fetch(url, { mode: 'cors' });
-      if (!response.ok) throw new Error('Produit introuvable');
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Produit introuvable via proxy');
       const data = await response.json();
       if (data.status === 'success' || data.status === 1) {
         return data.product;

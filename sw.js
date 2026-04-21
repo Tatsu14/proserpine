@@ -49,8 +49,8 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // 1. API Open Food Facts : Network First (on veut les données fraîches)
-  if (url.origin === 'https://world.openfoodfacts.org') {
+  // 1. Proxy API Vercel : Network First (on veut les données fraîches)
+  if (url.pathname.startsWith('/api/')) {
     event.respondWith(
       fetch(event.request)
         .then((response) => {
