@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Proserpine — Détails de tri</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#071E12" />
+  </head>
+  <body>
+    <div id="mobile-frame">
+      <main id="app-content">
+        <section id="view-guide-detail" class="view active">
+          <header class="app-header-dark" id="guide-detail-header">
+            <div class="header-content no-margin-bottom">
+              <button class="icon-btn-square back-btn icon-btn-glass" id="back-to-guide" aria-label="Retour">
+                <span class="material-symbols-rounded">arrow_back</span>
+              </button>
+              <h3 id="guide-detail-title">Détails de tri</h3>
+            </div>
+          </header>
+          <div class="scroll-content">
+            <div id="guide-detail-content" class="text-content-page" aria-live="polite">
+              <!-- Peuplé par guide-detail.js -->
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="guide-detail.js"></script>
+  </body>
+</html>

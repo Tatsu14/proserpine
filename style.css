@@ -1,0 +1,2220 @@
+/* =============================================================
+   PROSERPINE — DESIGN TOKENS (Système de variables CSS)
+   =============================================================
+
+   TABLE DES MATIÈRES :
+   1.  Couleurs — Marque (Brand)
+   2.  Couleurs — Arrière-plans (Backgrounds)
+   3.  Couleurs — Textes
+   4.  Couleurs — Bordures
+   5.  Couleurs — Statuts sémantiques
+   6.  Couleurs — Catégories du guide de tri
+   7.  Couleurs — Transparences & overlays
+   8.  Typographie — Tailles
+   9.  Typographie — Graisses (Weights)
+   10. Espacements (Spacing)
+   11. Rayons de bordure (Border Radius)
+   12. Ombres (Shadows)
+   13. Dimensions — Composants UI
+   14. Transitions & Animations
+   ============================================================= */
+
+:root {
+
+    /* ── 1. COULEURS — MARQUE ──────────────────────────────── */
+    --color-brand-darkest:          #071E12;
+    --color-brand-primary:          #00CC66;
+    --color-brand-primary-dark:     #00994C;
+    --color-brand-primary-light:    rgba(0, 204, 102, 0.10);
+    --color-brand-primary-glow:     rgba(0, 204, 102, 0.40);
+
+    /* ── 2. COULEURS — ARRIÈRE-PLANS ──────────────────────── */
+    --color-bg-app:                 #E2E8F0;
+    --color-bg-gray:                #F3F5F4;
+    --color-bg-surface:             #FFFFFF;
+    --color-bg-dot-pattern:         #C2D4C9;
+
+    /* ── 3. COULEURS — TEXTES ─────────────────────────────── */
+    --color-text-dark:              #0F1713;
+    --color-text-muted:             #596B62;
+    --color-text-light:             #A4B5AC;
+    --color-text-on-dark:           #FFFFFF;
+    --color-text-on-dark-muted:     rgba(255, 255, 255, 0.60);
+    --color-text-on-dark-faint:     rgba(255, 255, 255, 0.80);
+
+    /* ── 4. COULEURS — BORDURES ───────────────────────────── */
+    --color-border-default:         #E4EBE6;
+    --color-border-brand:           var(--color-brand-primary);
+    --color-border-on-dark:         rgba(255, 255, 255, 0.15);
+    --color-border-on-dark-strong:  rgba(255, 255, 255, 0.10);
+    --color-border-mobile-frame:    #DFE6E1;
+
+    /* ── 5. COULEURS — STATUTS SÉMANTIQUES ────────────────── */
+    --color-status-good:            #27AE60;
+    --color-status-warning:         #FF9800;
+    --color-status-danger:          #E74C3C;
+    --color-status-good-bg:         rgba(0, 204, 102, 0.10);
+    --color-status-warning-bg:      rgba(255, 152, 0, 0.10);
+
+    /* ── 6. COULEURS — CATÉGORIES GUIDE ──────────────────── */
+    --color-guide-pmc:              #3498DB;
+    --color-guide-paper:            #F1C40F;
+    --color-guide-paper-text:       #2C3E50;
+    --color-guide-organic:          #27AE60;
+    --color-guide-glass:            #95A5A6;
+
+    /* ── 7. COULEURS — OVERLAYS & TRANSPARENCES ──────────── */
+    --color-overlay-dark-heavy:     rgba(0, 0, 0, 0.80);
+    --color-overlay-dark-medium:    rgba(0, 0, 0, 0.50);
+    --color-overlay-white-faint:    rgba(255, 255, 255, 0.08);
+    --color-overlay-white-subtle:   rgba(255, 255, 255, 0.10);
+    --color-overlay-white-card:     rgba(255, 255, 255, 0.05);
+    --color-gradient-card-shine:    linear-gradient(135deg, rgba(255,255,255,0.10) 0%, transparent 100%);
+
+    /* ── 8. TYPOGRAPHIE — TAILLES ─────────────────────────── */
+    --font-size-2xs:                0.625rem;   /* 10px — étiquettes timeline */
+    --font-size-xs:                 0.6875rem;  /* 11px — nav, c-info */
+    --font-size-sm:                 0.75rem;    /* 12px — badges, sous-titres */
+    --font-size-base:               0.8125rem;  /* 13px — texte courant secondaire */
+    --font-size-md:                 0.875rem;   /* 14px — texte courant principal */
+    --font-size-lg:                 1rem;       /* 16px — corps, brand logo */
+    --font-size-xl:                 1.125rem;   /* 18px — titres de section */
+    --font-size-2xl:                1.25rem;    /* 20px — titres profil */
+    --font-size-3xl:                1.5rem;     /* 24px — titres header */
+    --font-size-4xl:                1.625rem;   /* 26px — titre produit */
+    --font-size-5xl:                2.618rem;   /* φ² × 1rem = 41.9px — score jauge (φ²) */
+    --font-size-icon-large:         2.5rem;     /* 40px — grande icône tip */
+    --font-size-icon-coming-soon:   4rem;       /* 64px — icône coming soon */
+
+    /* ── 9. TYPOGRAPHIE — GRAISSES ────────────────────────── */
+    --font-weight-regular:          400;
+    --font-weight-semibold:         600;
+    --font-weight-bold:             700;
+    --font-weight-extrabold:        800;
+    --font-weight-black:            900;
+
+    /* ── 10. ESPACEMENTS ──────────────────────────────────── */
+    --space-1:                      0.25rem;    /*  4px */
+    --space-2:                      0.5rem;     /*  8px */
+    --space-3:                      0.75rem;    /* 12px */
+    --space-4:                      1rem;       /* 16px */
+    --space-5:                      1.25rem;    /* 20px */
+    --space-6:                      1.5rem;     /* 24px */
+    --space-8:                      2rem;       /* 32px */
+    --space-10:                     2.5rem;     /* 40px */
+    --space-12:                     3rem;       /* 48px */
+    --space-content-bottom:         5.625rem;   /* 90px — espace nav bas */
+
+    /* ── 11. RAYONS DE BORDURE ────────────────────────────── */
+    --radius-xs:                    0.375rem;   /*  6px */
+    --radius-sm:                    0.5rem;     /*  8px */
+    --radius-md:                    0.75rem;    /* 12px */
+    --radius-lg:                    1rem;       /* 16px */
+    --radius-xl:                    1.25rem;    /* 20px */
+    --radius-2xl:                   1.5rem;     /* 24px */
+    --radius-3xl:                   2rem;       /* 32px */
+    --radius-phi:                   1.618rem;   /* φ × 1rem = 25.9px — rayon basé sur le nombre d'or */
+    --radius-full:                  50%;
+
+    /* ── 12. OMBRES ───────────────────────────────────────── */
+    --shadow-sm:                    0 0.25rem 0.625rem rgba(0,0,0,0.03);
+    --shadow-md:                    0 0.5rem 1.875rem rgba(0,0,0,0.06);
+    --shadow-lg:                    0 0.625rem 2.5rem rgba(0,0,0,0.10);
+    --shadow-brand-frame:           0 1.25rem 3.75rem rgba(0, 204, 102, 0.15);
+    --shadow-nav-btn:               0 0.25rem 0.9375rem rgba(0,0,0,0.10);
+    --shadow-search:                0 0.25rem 0.75rem rgba(0,0,0,0.10);
+    --shadow-scan-laser:            0 0 0.625rem var(--color-brand-primary);
+    --shadow-pro:                   var(--shadow-lg);
+
+    /* ── 13. DIMENSIONS — COMPOSANTS UI ───────────────────── */
+    --size-icon-btn:                2.5rem;     /* 40px — boutons icônes */
+    --size-icon-item:               3rem;       /* 48px — image item liste */
+    --size-icon-alt:                2.75rem;    /* 44px — icône alternative */
+    --size-icon-tip:                5rem;       /* 80px — icône tip card */
+    --size-timeline-dot:            2.25rem;    /* 36px — dot timeline */
+    --size-d-icon:                  3rem;       /* 48px — icône daily stat */
+    --size-scan-circle:             3.5rem;     /* 56px — cercle scan nav */
+    --size-gauge:                   10rem;      /* 160px — jauge score */
+    --size-mini-product:            6.18rem;    /* φ⁻¹ × 10rem = 98.9px — overlay produit (jauge/φ) */
+    --size-ptr-indicator:           2.5rem;     /* 40px — pull-to-refresh */
+    --size-mobile-width:            24.375rem;  /* ~390px */
+    --size-mobile-height:           52.75rem;   /* ~844px */
+    --size-nav-height:              5rem;       /* 80px — barre de navigation */
+
+    /* ── 14. TRANSITIONS & ANIMATIONS ────────────────────── */
+    --transition-fast:              0.2s ease;
+    --transition-normal:            0.3s ease;
+    --transition-smooth:            0.3s cubic-bezier(0.1, 0.7, 0.1, 1);
+    --transition-gauge:             1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-scan-duration:      4s;
+    --animation-pulse-duration:     2s;
+    --animation-ptr-duration:       1s;
+
+    /* ── 15. NOMBRE D'OR — φ (Golden Ratio) ─────────────────
+    |
+    |  φ = 1,6180339887… (phi)
+    |  Propriété fondamentale : a/b = (a+b)/a = φ
+    |
+    |  Applications dans ce design :
+    |  ┌─────────────────────────────────────────────────────┐
+    |  │ RATIO HÉRO / CONTENU (vue produit)                  │
+    |  │   Héro   : 38,2 vh  (= 1/(1+φ) × 100)              │
+    |  │   Contenu: 61,8 vh  (= φ/(1+φ) × 100)              │
+    |  ├─────────────────────────────────────────────────────┤
+    |  │ RATIO JAUGE / OVERLAY MINI-PRODUIT                  │
+    |  │   Jauge    : 10rem (160px)                          │
+    |  │   Overlay  : 10rem × φ⁻¹ = 6,18rem (≈99px)         │
+    |  │   Rapport  : 160 / 99 ≈ φ ✓                         │
+    |  ├─────────────────────────────────────────────────────┤
+    |  │ SCORE DE LA JAUGE (typographie)                     │
+    |  │   2,618rem = 1rem × φ² (≈ 41,9px)                  │
+    |  ├─────────────────────────────────────────────────────┤
+    |  │ RAYON DE BORDURE φ                                  │
+    |  │   1,618rem = 1rem × φ (≈ 25,9px)                   │
+    |  └─────────────────────────────────────────────────────┘
+    |
+    |  Constantes mathématiques ──────────────────────────── */
+    --phi:                  1.6180339887;    /* φ — le nombre d'or */
+    --phi-inverse:          0.6180339887;    /* 1/φ = φ - 1 */
+    --phi-sq:               2.6180339887;    /* φ² = φ + 1 */
+    --phi-inverse-sq:       0.3819660113;    /* 1/φ² */
+
+    /*  Proportions de mise en page ─────────────────────── */
+    --phi-layout-minor:     38.2vh;          /* 1/(1+φ) — zone plus petite */
+    --phi-layout-major:     61.8vh;          /* φ/(1+φ) — zone plus grande */
+
+    /*  Échelle typographique φ (base : 1rem = 16px) ────── */
+    /*  Chaque palier = palier précédent × φ               */
+    --phi-type-xs:          0.382rem;        /* 1rem / φ²  =  6,1px */
+    --phi-type-sm:          0.618rem;        /* 1rem / φ   =  9,9px */
+    --phi-type-md:          1rem;            /* base       = 16,0px */
+    --phi-type-lg:          1.618rem;        /* 1rem × φ   = 25,9px */
+    --phi-type-xl:          2.618rem;        /* 1rem × φ²  = 41,9px */
+    --phi-type-2xl:         4.236rem;        /* 1rem × φ³  = 67,8px */
+
+    /*  Échelle d'espacement φ ──────────────────────────── */
+    /*  Utilisable pour tout nouvel élément                 */
+    --phi-space-xs:         0.382rem;        /*  6,1px */
+    --phi-space-sm:         0.618rem;        /*  9,9px */
+    --phi-space-md:         1rem;            /* 16,0px */
+    --phi-space-lg:         1.618rem;        /* 25,9px */
+    --phi-space-xl:         2.618rem;        /* 41,9px */
+    --phi-space-2xl:        4.236rem;        /* 67,8px */
+
+    /* ── ALIASES DE RÉTRO-COMPATIBILITÉ ──────────────────── */
+    /* Ces alias permettent de garder l'ancien code fonctionnel
+       pendant une migration progressive. */
+    --brand-dark:       var(--color-brand-darkest);
+    --brand-primary:    var(--color-brand-primary);
+    --brand-primary-dark: var(--color-brand-primary-dark);
+    --bg-gray:          var(--color-bg-gray);
+    --surface-white:    var(--color-bg-surface);
+    --text-dark:        var(--color-text-dark);
+    --text-muted:       var(--color-text-muted);
+}
+
+/* Suppression du délai 300ms sur les éléments cliquables (iOS < 13) */
+.nav-item,
+.icon-btn-square,
+.product-item,
+.guide-card,
+.setting-item,
+.suggestion-item,
+.c-card-pro,
+.cta-scan-btn,
+.back-btn,
+.back-to-home {
+    touch-action: manipulation;
+}
+
+/* =============================================================
+   RESET & BASE
+   ============================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background-color: var(--color-bg-app);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* =============================================================
+   CADRE MOBILE
+   ============================================================= */
+#mobile-frame {
+    width: 100%;
+    height: 100vh;       /* fallback pour anciens navigateurs */
+    height: 100dvh;      /* dvh = Dynamic Viewport Height — corrige la barre iOS Safari */
+    background-color: var(--color-bg-gray);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: var(--color-text-dark);
+}
+
+@media screen and (min-width: 600px) {
+    #mobile-frame {
+        width: var(--size-mobile-width);
+        height: var(--size-mobile-height);
+        border-radius: 2.5rem;
+        border: 0.25rem solid var(--color-border-mobile-frame);
+        box-shadow: var(--shadow-brand-frame);
+    }
+}
+
+#app-content {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch; /* défilement momentum sur iOS */
+    overscroll-behavior-y: contain;    /* empêche le scroll de "remonter" à la page parente */
+}
+
+/* =============================================================
+   VUES
+   ============================================================= */
+.view {
+    display: none;
+    height: 100%;
+    animation: fadeIn var(--transition-normal) forwards;
+    transition: transform var(--transition-smooth);
+}
+
+.view.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* =============================================================
+   PULL TO REFRESH
+   ============================================================= */
+#ptr-indicator {
+    position: absolute;
+    top: -3.125rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: var(--size-ptr-indicator);
+    height: var(--size-ptr-indicator);
+    background: var(--color-brand-darkest);
+    color: var(--color-brand-primary);
+    border-radius: var(--radius-full);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow-nav-btn);
+    z-index: 100;
+    transition: transform 0.1s linear, opacity var(--transition-fast);
+    opacity: 0;
+}
+
+#ptr-indicator.visible { opacity: 1; }
+
+#ptr-indicator.refreshing .material-symbols-rounded {
+    animation: rotateRefresh var(--animation-ptr-duration) linear infinite;
+}
+
+@keyframes rotateRefresh {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* =============================================================
+   NAV HAUT & LOGO MARQUE
+   ============================================================= */
+.top-nav-brand {
+    background: var(--color-brand-darkest);
+    padding: var(--space-5) var(--space-6);
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-brand-primary);
+}
+
+.brand-logo h2 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-black);
+    letter-spacing: 0.09375rem;
+}
+
+/* =============================================================
+   EN-TÊTE SOMBRE (app-header-dark)
+   ============================================================= */
+.app-header-dark {
+    background: var(--color-brand-darkest);
+    padding: 0 var(--space-6) var(--space-8);
+    color: var(--color-text-on-dark);
+    margin-bottom: var(--space-6);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-6);
+}
+
+.greeting {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-1);
+}
+
+.header-content h3 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-extrabold);
+}
+
+.avatar { display: none; }
+
+/* =============================================================
+   BARRE DE RECHERCHE (ancienne)
+   ============================================================= */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: var(--color-overlay-white-faint);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+    gap: var(--space-3);
+    border: 0.0625rem solid var(--color-border-on-dark);
+}
+
+.search-bar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    font-size: var(--font-size-lg);
+    color: var(--color-text-on-dark);
+    outline: none;
+}
+
+.filter-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-brand-primary);
+    cursor: pointer;
+    display: flex;
+}
+
+/* =============================================================
+   CONTENU SCROLLABLE
+   ============================================================= */
+.scroll-content {
+    padding: 0 var(--space-6) var(--space-content-bottom);
+}
+
+/* =============================================================
+   CARTE STATS ACCUEIL
+   ============================================================= */
+.home-stats-card {
+    background: var(--color-bg-surface);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -3.125rem;
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--space-8);
+    border: 0.0625rem solid var(--color-border-default);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.stat-divider {
+    width: 0.0625rem;
+    height: var(--size-ptr-indicator);
+    background: var(--color-border-default);
+}
+
+.stat-value {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-black);
+    color: var(--color-brand-darkest);
+}
+
+.text-green { color: var(--color-brand-primary-dark); }
+
+.stat-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.03125rem;
+    margin-top: var(--space-1);
+}
+
+/* =============================================================
+   LISTE DE PRODUITS
+   ============================================================= */
+.section-subtitle {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-extrabold);
+    margin-bottom: var(--space-4);
+    color: var(--color-brand-darkest);
+}
+
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.product-item {
+    background: var(--color-bg-surface);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    border: 0.0625rem solid var(--color-border-default);
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+
+.product-item:active { transform: scale(0.98); }
+
+.item-img {
+    width: var(--size-icon-item);
+    height: var(--size-icon-item);
+    border-radius: var(--radius-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-on-dark);
+}
+
+.green-bg  { background: var(--color-brand-primary); }
+.orange-bg { background: var(--color-status-warning); }
+
+.item-details { flex: 1; }
+
+.item-details h4 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+}
+
+.item-details p {
+    font-size: var(--font-size-base);
+    color: var(--color-text-muted);
+}
+
+.score-badge {
+    padding: var(--space-1) var(--space-3) var(--space-1) var(--space-3);
+    border-radius: var(--radius-sm);
+    font-weight: var(--font-weight-extrabold);
+    font-size: 0.9375rem;
+}
+
+.green-score {
+    background: var(--color-status-good-bg);
+    color: var(--color-brand-primary-dark);
+}
+
+.orange-score {
+    background: var(--color-status-warning-bg);
+    color: #E68900;
+}
+
+/* =============================================================
+   VUE PRODUIT — DÉTAILS
+   ============================================================= */
+.product-top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-5) var(--space-6);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.icon-btn-square {
+    width: var(--size-icon-btn);
+    height: var(--size-icon-btn);
+    background: var(--color-bg-surface);
+    border: 0.0625rem solid var(--color-border-default);
+    border-radius: var(--radius-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    color: var(--color-text-dark);
+}
+
+.icon-btn-square:active { transform: scale(0.9); }
+
+/* Héro produit
+   Hauteur = φ/(1+φ) × 100 = 38,2vh — proportion nombre d'or
+   Contenu = 61,8vh — la partie "majeure" de l'écran */
+.product-hero-container {
+    height: var(--phi-layout-minor);   /* 38,2vh — minor du ratio φ */
+    background: #DFE8E3;
+    background-image: radial-gradient(var(--color-bg-dot-pattern) 0.09375rem, transparent 0.09375rem);
+    background-size: 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Jauge circulaire */
+.gauge-wrapper {
+    position: relative;
+    width: var(--size-gauge);
+    height: var(--size-gauge);
+    z-index: 2;
+}
+
+.progress-ring__background {
+    stroke: rgba(255, 255, 255, 0.4);
+}
+
+.progress-ring__circle {
+    transition: stroke-dashoffset var(--transition-gauge);
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+.gauge-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.gauge-content h3 {
+    font-size: var(--font-size-5xl);
+    font-weight: 950;
+    color: var(--color-brand-darkest);
+    line-height: 1;
+}
+
+.gauge-content span {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+}
+
+/* Overlay mini-produit */
+.mini-product-overlay {
+    position: absolute;
+    bottom: -1.25rem;
+    right: -1.25rem;
+    width: var(--size-mini-product);
+    height: var(--size-mini-product);
+    background: var(--color-bg-surface);
+    border-radius: var(--radius-full);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow-lg);
+    border: 0.125rem solid var(--color-bg-gray);
+    color: var(--color-brand-primary-dark);
+}
+
+.mini-product-overlay .material-symbols-rounded {
+    font-size: 3.75rem;
+    opacity: 0.8;
+}
+
+/* Contenu détails produit */
+.product-details-content {
+    padding: var(--space-8) var(--space-6) 6.25rem;
+    background: var(--color-bg-gray);
+}
+
+.product-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-6);
+}
+
+.uppercase-title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-black);
+    letter-spacing: -0.03125rem;
+    text-transform: uppercase;
+    color: var(--color-brand-darkest);
+    line-height: 1.1;
+    margin-bottom: var(--space-1);
+}
+
+.brand {
+    font-size: var(--font-size-base);
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.03125rem;
+}
+
+/* Badges techniques */
+.badges-row {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+    flex-wrap: wrap;
+}
+
+.tech-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) 0.625rem;
+    background: var(--color-bg-surface);
+    border: 0.0625rem solid var(--color-border-default);
+    border-radius: var(--radius-xs);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+}
+
+.tech-badge .material-symbols-rounded {
+    font-size: var(--font-size-lg);
+    color: var(--color-brand-primary-dark);
+}
+
+/* Boîte d'analyse */
+.analysis-box {
+    background: var(--color-bg-surface);
+    border: 0.0625rem solid var(--color-brand-primary);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-8);
+    border-left: 0.25rem solid var(--color-brand-primary);
+}
+
+.analysis-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+    color: var(--color-brand-primary-dark);
+}
+
+.analysis-header h5 {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-extrabold);
+    text-transform: uppercase;
+    letter-spacing: 0.03125rem;
+}
+
+.analysis-box p {
+    font-size: var(--font-size-md);
+    color: var(--color-text-dark);
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* Titres de sections produit */
+.consigne-section h3,
+.alternatives-section h3,
+.lifecycle-section h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-extrabold);
+    margin-bottom: var(--space-4);
+    color: var(--color-brand-darkest);
+}
+
+/* =============================================================
+   TIMELINE CYCLE DE VIE
+   ============================================================= */
+.lifecycle-section { margin-bottom: var(--space-8); }
+
+.lifecycle-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 0.625rem;
+}
+
+.timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    z-index: 2;
+    width: 3.75rem;
+}
+
+.t-icon {
+    width: var(--size-timeline-dot);
+    height: var(--size-timeline-dot);
+    background: var(--color-bg-surface);
+    border: 0.0625rem solid var(--color-border-default);
+    border-radius: var(--radius-full);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xl);
+}
+
+.t-label {
+    font-size: var(--font-size-2xs);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.timeline-step.done .t-icon {
+    border-color: var(--color-brand-primary);
+    color: var(--color-brand-primary);
+}
+
+.timeline-step.done .t-label { color: var(--color-brand-darkest); }
+
+.timeline-line {
+    flex: 1;
+    height: 0.125rem;
+    background: var(--color-border-default);
+    margin: 0 -0.9375rem;
+    margin-top: -1.125rem;
+    z-index: 1;
+}
+
+.timeline-line.done { background: var(--color-brand-primary); }
+
+/* =============================================================
+   GRILLE CONSIGNES
+   ============================================================= */
+.consigne-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+    margin-bottom: var(--space-8);
+}
+
+.c-card-pro {
+    background: var(--color-bg-surface);
+    border: 0.0625rem solid var(--color-border-default);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.c-card-pro .material-symbols-rounded {
+    font-size: var(--font-size-3xl);
+    color: var(--color-brand-primary-dark);
+}
+
+.c-info strong {
+    display: block;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-brand-darkest);
+}
+
+.c-info p {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Carte alternative */
+.alt-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    background: var(--color-brand-darkest);
+    color: var(--color-text-on-dark);
+    cursor: pointer;
+}
+
+.alt-img {
+    width: var(--size-icon-alt);
+    height: var(--size-icon-alt);
+    border-radius: var(--radius-sm);
+    background: var(--color-overlay-white-subtle);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-brand-primary);
+}
+
+.alt-info { flex: 1; }
+
+.alt-info h5 {
+    font-size: 0.9375rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 0.125rem;
+}
+
+.alt-info p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+}
+
+.ext-arrow {
+    margin-left: auto;
+    color: var(--color-brand-primary);
+}
+
+/* =============================================================
+   VUE SCANNER
+   ============================================================= */
+#view-scan { background: black; }
+
+.camera-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.camera-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    filter: contrast(1.2);
+}
+
+.scan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-6);
+}
+
+.scan-header .icon-btn-square {
+    background: var(--color-overlay-dark-medium);
+    border: none;
+    color: var(--color-text-on-dark);
+}
+
+.scan-target-hint {
+    background: var(--color-brand-primary);
+    color: var(--color-text-on-dark);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 1.25rem;
+    font-weight: var(--font-weight-extrabold);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+}
+
+.tech-reticle {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--color-border-on-dark);
+    width: clamp(240px, 82%, 320px);   /* s'adapte : 240px mini → 82% de l'écran → 320px maxi */
+    height: clamp(160px, 55vw, 220px); /* hauteur proportionnelle à la largeur d'écran */
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 0 0 9999px var(--color-overlay-dark-medium);
+}
+
+.tech-reticle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 4px solid var(--color-brand-primary);
+    border-radius: var(--radius-md);
+    box-sizing: border-box;
+}
+
+.scan-laser {
+    width: 100%;
+    height: 2px;
+    background: var(--color-brand-primary);
+    box-shadow: var(--shadow-scan-laser);
+    position: absolute;
+    top: 0;
+    animation: scan var(--animation-scan-duration) infinite linear;
+}
+
+@keyframes scan {
+    0%   { top: 0; }
+    50%  { top: 100%; }
+    100% { top: 0; }
+}
+
+.scan-action-card {
+    position: absolute;
+    bottom: 40px;
+    left: var(--space-6);
+    right: var(--space-6);
+    background: var(--color-bg-surface);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    cursor: pointer;
+    border-bottom: 4px solid var(--color-brand-primary);
+}
+
+.scan-action-icon {
+    width: var(--size-icon-alt);
+    height: var(--size-icon-alt);
+    border-radius: var(--radius-sm);
+    background: var(--color-brand-darkest);
+    color: var(--color-brand-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scan-action-text { flex: 1; }
+
+.scan-action-text h4 {
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-brand-darkest);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-1);
+}
+
+.scan-action-text p {
+    font-size: var(--font-size-base);
+    color: var(--color-text-muted);
+}
+
+.arrow-icon {
+    margin-left: auto;
+    font-size: 1.75rem;
+    color: var(--color-brand-primary-dark);
+}
+
+/* =============================================================
+   VUE PROFIL
+   ============================================================= */
+.profile-header-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    padding: var(--space-6);
+    background: var(--color-bg-surface);
+    border-bottom: 0.0625rem solid var(--color-border-default);
+}
+
+.profile-big-avatar { display: none; }
+
+.profile-header-card h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-extrabold);
+    margin-bottom: var(--space-1);
+}
+
+.rank-badge { display: none; }
+
+.settings-list {
+    padding: 0 var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    background: var(--color-bg-surface);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-brand-darkest);
+    border: 0.0625rem solid var(--color-border-default);
+    cursor: pointer;
+}
+
+.setting-item .material-symbols-rounded { color: var(--color-brand-primary-dark); }
+.setting-item .arrow { margin-left: auto; color: var(--color-text-muted); }
+
+/* =============================================================
+   NAVIGATION BAS DE PAGE
+   ============================================================= */
+#bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: var(--size-nav-height);
+    background-color: var(--color-bg-surface);
+    border-top: 0.0625rem solid var(--color-border-default);
+    padding-bottom: env(safe-area-inset-bottom, 0.625rem);
+    z-index: 10;
+}
+
+.nav-item {
+    background: transparent;
+    border: none;
+    color: var(--color-text-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    gap: var(--space-1);
+    transition: color var(--transition-fast);
+}
+
+.nav-item.active { color: var(--color-brand-darkest); }
+
+.nav-item.active .material-symbols-rounded {
+    font-variation-settings: 'FILL' 1;
+}
+
+.scan-nav-circle {
+    width: var(--size-scan-circle);
+    height: var(--size-scan-circle);
+    background: var(--color-brand-darkest);
+    color: var(--color-brand-primary);
+    border-radius: var(--radius-full);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -1.875rem;
+    box-shadow: var(--shadow-nav-btn);
+    border: 0.25rem solid var(--color-bg-surface);
+    transition: transform var(--transition-fast);
+    animation: pulse-green var(--animation-pulse-duration) infinite;
+}
+
+@keyframes pulse-green {
+    0%   { box-shadow: 0 0 0 0 var(--color-brand-primary-glow); }
+    70%  { box-shadow: 0 0 0 0.625rem rgba(0, 204, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 204, 102, 0); }
+}
+
+.scan-nav-btn { color: var(--color-brand-darkest); }
+
+.scan-nav-circle .material-symbols-rounded { font-size: 1.75rem; }
+
+.scan-nav-btn:active .scan-nav-circle { transform: translateY(0.25rem); }
+
+/* =============================================================
+   DASHBOARD — NOUVEAU DESIGN
+   ============================================================= */
+.welcome-card-pro {
+    background: var(--color-brand-darkest);
+    padding: var(--space-6);
+    border-radius: var(--radius-phi);       /* φ × 1rem = 25,9px */
+    margin: var(--space-6);
+    color: var(--color-text-on-dark);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.w-text h4 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-black);
+    margin-bottom: var(--space-2);
+}
+
+.w-text p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+.cta-scan-btn {
+    background: var(--color-brand-primary);
+    border: none;
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    color: var(--color-text-on-dark);
+    font-weight: var(--font-weight-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.daily-stat-compact {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border-default);
+    padding: var(--space-4);
+    border-radius: var(--radius-xl);
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    margin: 0 var(--space-6);
+}
+
+.d-icon {
+    width: var(--size-d-icon);
+    height: var(--size-d-icon);
+    background: var(--color-brand-primary-light);
+    color: var(--color-brand-primary-dark);
+    border-radius: 0.875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.d-text strong {
+    display: block;
+    font-size: var(--font-size-base);
+    color: var(--color-brand-darkest);
+}
+
+.d-text p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    line-height: 1.3;
+}
+
+/* =============================================================
+   SUGGESTIONS DE RECHERCHE
+   ============================================================= */
+.mini-suggestions {
+    margin-top: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.suggestion-item {
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-overlay-white-faint);
+    border-radius: var(--radius-md);
+    color: var(--color-text-on-dark);
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.suggestion-item span { font-size: 1.2rem; color: var(--color-brand-primary); }
+
+/* Surcharges pour la barre de recherche de l'accueil */
+.home-search-box {
+    background: var(--color-bg-surface) !important;
+    border: 2px solid var(--color-brand-primary) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: var(--space-2) var(--space-3) var(--space-2) var(--space-4) !important;
+    box-shadow: var(--shadow-search);
+}
+
+.home-search-box input {
+    color: var(--color-brand-darkest) !important;
+    font-weight: var(--font-weight-semibold);
+}
+
+.home-search-box input::placeholder { color: #999; }
+
+#home-search-results .suggestion-item {
+    background: var(--color-bg-surface);
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-border-default);
+    margin-bottom: var(--space-1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#home-search-results .suggestion-item:active { background: #f0f0f0; }
+
+/* =============================================================
+   VUE COMING SOON
+   ============================================================= */
+.coming-soon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: var(--space-10);
+}
+
+.coming-soon-container h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-black);
+    margin-bottom: var(--space-3);
+    color: var(--color-brand-darkest);
+}
+
+.coming-soon-container p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-8);
+}
+
+/* =============================================================
+   PAGES DE CONTENU TEXTUEL
+   ============================================================= */
+.text-content-page {
+    padding: 0 var(--space-6);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+}
+
+.text-content-page h4 {
+    margin: var(--space-6) 0 var(--space-3);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-brand-darkest);
+}
+
+.text-content-page p { margin-bottom: var(--space-4); font-size: 0.95rem; }
+.text-content-page ul { padding-left: var(--space-5); margin-bottom: var(--space-4); }
+.text-content-page li { margin-bottom: var(--space-2); font-size: 0.9rem; }
+
+/* =============================================================
+   CARTE ECO-CONSEIL
+   ============================================================= */
+.tip-card-full {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border-default);
+    padding: var(--space-8) var(--space-6);
+    border-radius: var(--radius-3xl);
+    text-align: center;
+}
+
+.tip-icon-large {
+    width: var(--size-icon-tip);
+    height: var(--size-icon-tip);
+    background: var(--color-brand-darkest);
+    color: var(--color-brand-primary);
+    border-radius: var(--radius-full);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto var(--space-6);
+}
+
+.tip-icon-large span { font-size: var(--font-size-icon-large); }
+.tip-card-full h4 { font-size: 1.4rem; font-weight: var(--font-weight-black); margin-bottom: var(--space-3); }
+.tip-card-full p { color: var(--color-text-muted); line-height: 1.5; }
+
+/* =============================================================
+   RECHERCHE MANUELLE (SCANNER)
+   ============================================================= */
+.manual-search-container {
+    padding: var(--space-5);
+    background: var(--color-overlay-white-card);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-xl);
+    margin: var(--space-5);
+    border: 1px solid var(--color-border-on-dark-strong);
+}
+
+.search-hint {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-on-dark-muted);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.search-input-wrapper {
+    display: flex;
+    gap: 10px;
+    background: var(--color-overlay-white-subtle);
+    padding: 5px 5px 5px 15px;
+    border-radius: 15px;
+}
+
+.search-input-wrapper input {
+    background: transparent;
+    border: none;
+    color: var(--color-text-on-dark);
+    font-family: inherit;
+    width: 100%;
+}
+
+.search-input-wrapper input:focus { outline: none; }
+
+#manual-search-btn {
+    background: var(--color-brand-primary);
+    border: none;
+    color: var(--color-text-on-dark);
+    padding: 10px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =============================================================
+   GUIDE DE TRI — GRILLE
+   ============================================================= */
+.guide-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    padding: var(--space-5);
+}
+
+.guide-card {
+    padding: var(--space-4);
+    border-radius: var(--radius-xl);
+    color: var(--color-text-on-dark);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.guide-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--color-gradient-card-shine);
+}
+
+.guide-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.guide-card h4 {
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-extrabold);
+}
+
+.guide-card p {
+    font-size: var(--font-size-sm);
+    line-height: 1.3;
+    opacity: 0.9;
+}
+
+.blue-bag    { background: var(--color-guide-pmc); }
+.yellow-box  { background: var(--color-guide-paper); color: var(--color-guide-paper-text); }
+.green-bin   { background: var(--color-guide-organic); }
+.glass-bubble { background: var(--color-guide-glass); }
+
+.alert-box-warn {
+    grid-column: span 2;
+    background: var(--color-status-danger);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-top: var(--space-2);
+}
+
+.alert-box-warn p {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+}
+
+
+/* =============================================================
+   RESPONSIVE — COMPATIBILITÉ MULTI-SMARTPHONES
+   =============================================================
+
+   Stratégie de ciblage :
+   ┌─────────────────────────────────────────────────────────┐
+   │  LARGEUR (width breakpoints)                            │
+   │  ≤ 360px  → très petits  (iPhone SE 1ère gen, Moto G)  │
+   │  361-390px → petits/moyens (cible principale)           │
+   │  391-430px → grands (iPhone Pro Max, Galaxy Ultra)      │
+   ├─────────────────────────────────────────────────────────┤
+   │  HAUTEUR (height breakpoints)                           │
+   │  ≤ 568px  → très courts  (iPhone SE 1, paysage)         │
+   │  ≤ 680px  → courts  (iPhone SE 2/3, iPhone 8)           │
+   │  ≥ 900px  → très hauts  (iPhone 15 Pro Max, Pixel Pro)  │
+   └─────────────────────────────────────────────────────────┘
+
+   Avantage du système de variables CSS :
+   En redéfinissant une variable dans un @media, TOUS les
+   éléments qui l'utilisent s'adaptent automatiquement.
+   ============================================================= */
+
+
+/* ──────────────────────────────────────────────────────────────
+   1. SAFE AREAS — Encoche, Dynamic Island, Barre home
+   
+   env() = valeur fournie par le système (iOS/Android).
+   La virgule dans env(safe-area-inset-top, 0px) = valeur
+   de secours si le navigateur ne supporte pas env().
+   ────────────────────────────────────────────────────────────── */
+@supports (padding-top: env(safe-area-inset-top)) {
+
+    /* Logo : descend sous l'encoche / Dynamic Island */
+    .top-nav-brand {
+        padding-top: calc(var(--space-5) + env(safe-area-inset-top, 0px));
+    }
+
+    /* En-tête scanner : descend sous l'encoche */
+    .scan-header {
+        padding-top: calc(var(--space-6) + env(safe-area-inset-top, 0px));
+    }
+
+    /* Nav bas : remonte au-dessus de la barre de geste home
+       (la "home bar" d'iPhone mesure environ 34px) */
+    #bottom-nav {
+        height: calc(var(--size-nav-height) + env(safe-area-inset-bottom, 0px));
+        padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.25rem);
+    }
+
+    /* Compenser la nav plus haute dans le scroll content */
+    .scroll-content {
+        padding-bottom: calc(
+            var(--space-content-bottom) + env(safe-area-inset-bottom, 0px)
+        );
+    }
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   2. GESTION DU TEXTE LONG
+   
+   Évite que les noms de produits ou de marques ne débordent
+   de leur conteneur sur n'importe quelle taille d'écran.
+   ────────────────────────────────────────────────────────────── */
+.item-details h4,
+.item-details p,
+.alt-info h5,
+.brand {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;  /* affiche "…" à la fin si trop long */
+    max-width: 100%;
+}
+
+/* Le titre produit peut aller à la ligne (il est grand) */
+.uppercase-title {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+/* Le texte du verdict peut être long */
+.analysis-box p {
+    overflow-wrap: break-word;
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   3. TRÈS PETITS ÉCRANS — largeur ≤ 360px
+   
+   Appareils ciblés :
+   • iPhone SE 1ère génération  (320 × 568px)  [2016, encore utilisé]
+   • Samsung Galaxy A03         (360 × 800px)
+   • Moto G / Nokia G10        (360 × 800px)
+   ────────────────────────────────────────────────────────────── */
+@media screen and (max-width: 360px) {
+
+    :root {
+        /* ── Typographie ── */
+        --font-size-3xl:     1.25rem;    /* 20px  ← était 24px */
+        --font-size-4xl:     1.375rem;   /* 22px  ← était 26px */
+        --font-size-5xl:     1.75rem;    /* 28px  ← était 41.9px */
+        --font-size-2xl:     1.125rem;   /* 18px  ← était 20px */
+        --font-size-xl:      1rem;       /* 16px  ← était 18px */
+
+        /* ── Espacement ── */
+        --space-6:           1rem;       /* 16px  ← était 24px */
+        --space-8:           1.375rem;   /* 22px  ← était 32px */
+
+        /* ── Héro produit ── */
+        --phi-layout-minor:  34vh;       /* plus petit que 38.2vh */
+
+        /* ── Bordures ── */
+        --radius-phi:        1.25rem;    /* légèrement réduit */
+    }
+
+    /* Cartes dashboard */
+    .welcome-card-pro {
+        margin: var(--space-3);
+        padding: var(--space-4);
+        gap: var(--space-3);
+    }
+
+    .daily-stat-compact {
+        margin: 0 var(--space-3);
+        padding: var(--space-3);
+        gap: var(--space-3);
+    }
+
+    .home-stats-card {
+        margin-left: var(--space-3);
+        margin-right: var(--space-3);
+    }
+
+    /* Réduction des marges globales */
+    .scroll-content {
+        padding-left: var(--space-4);
+        padding-right: var(--space-4);
+    }
+
+    .settings-list {
+        padding: 0 var(--space-3);
+    }
+
+    /* En-têtes */
+    .app-header-dark {
+        padding-left: var(--space-4);
+        padding-right: var(--space-4);
+        padding-bottom: var(--space-6);
+    }
+
+    /* Logo marque plus compact */
+    .brand-logo h2 { font-size: 0.875rem; }
+
+    /* Navigation : texte plus petit */
+    .nav-item > span:last-child { font-size: 0.5625rem; }
+
+    /* Badges techniques */
+    .tech-badge {
+        font-size: 0.6875rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    /* Contenu fiche produit */
+    .product-details-content {
+        padding: var(--space-5) var(--space-4) 6.25rem;
+    }
+
+    /* Grille guide de tri */
+    .guide-grid {
+        padding: var(--space-3);
+        gap: var(--space-3);
+    }
+
+    .guide-card {
+        padding: var(--space-3);
+    }
+
+    /* Historique */
+    .home-stats-card {
+        margin-top: -2.5rem;
+    }
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   4. GRANDS ÉCRANS PHONES — largeur ≥ 391px (et < 600px)
+   
+   Appareils ciblés :
+   • iPhone 14 / 15             (393 × 852px)
+   • iPhone 14/15 Plus & Pro Max (430 × 932px)
+   • Samsung Galaxy S23 Ultra   (412 × 915px)
+   • Google Pixel 7 Pro         (412 × 892px)
+   ────────────────────────────────────────────────────────────── */
+@media screen and (min-width: 391px) and (max-width: 599px) {
+
+    /* Plus d'espace disponible : on peut se permettre plus de generosité */
+    .welcome-card-pro {
+        padding: var(--space-6);
+        gap: var(--space-6);
+    }
+
+    .daily-stat-compact {
+        padding: var(--space-5);
+    }
+
+    /* Badges plus aérés */
+    .tech-badge {
+        padding: var(--space-1) var(--space-3);
+        font-size: 0.8125rem;
+    }
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   5. ÉCRANS COURTS — hauteur ≤ 680px
+   
+   Appareils ciblés :
+   • iPhone SE 2ème/3ème génération  (375 × 667px)  [très courant]
+   • iPhone 6 / 7 / 8               (375 × 667px)
+   • Samsung Galaxy S8               (360 × 740px)  [bord de gamme]
+   ────────────────────────────────────────────────────────────── */
+@media screen and (max-height: 680px) {
+
+    :root {
+        --phi-layout-minor:      32vh;    /* héro plus compact */
+        --space-content-bottom:  4.5rem;  /* moins d'espace en bas */
+    }
+
+    /* En-têtes plus compacts */
+    .app-header-dark {
+        padding-bottom: var(--space-5);
+        margin-bottom: var(--space-4);
+    }
+
+    /* Guide de tri : cartes plus compactes */
+    .guide-grid {
+        gap: var(--space-3);
+        padding: var(--space-4);
+    }
+
+    .guide-card {
+        padding: var(--space-3);
+        gap: var(--space-1);
+    }
+
+    /* Overlay produit : position ajustée pour héro réduit */
+    .mini-product-overlay {
+        bottom: -0.75rem;
+        right: -0.75rem;
+    }
+
+    /* Tip card */
+    .tip-card-full {
+        padding: var(--space-6) var(--space-5);
+    }
+
+    .tip-icon-large {
+        width: 3.5rem;
+        height: 3.5rem;
+        margin-bottom: var(--space-4);
+    }
+
+    .tip-icon-large span {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   6. TRÈS COURTS — hauteur ≤ 568px
+   
+   Appareils ciblés :
+   • iPhone SE 1ère génération   (320 × 568px)  [le plus petit iPhone]
+   • Mode paysage sur petits Android
+   ────────────────────────────────────────────────────────────── */
+@media screen and (max-height: 568px) {
+
+    :root {
+        --phi-layout-minor:      28vh;
+        --space-content-bottom:  4rem;
+    }
+
+    .app-header-dark {
+        padding-bottom: var(--space-4);
+        margin-bottom: var(--space-3);
+    }
+
+    .home-stats-card {
+        padding: var(--space-3) var(--space-5);
+        margin-bottom: var(--space-5);
+    }
+
+    .welcome-card-pro {
+        gap: var(--space-3);
+        padding: var(--space-4);
+    }
+
+    .w-text h4 { font-size: var(--font-size-xl); }
+    .w-text p  { font-size: 0.8rem; }
+
+    /* Scanner : réticule plus compact */
+    .tech-reticle {
+        height: clamp(130px, 48vw, 180px);
+        top: 42%;
+    }
+
+    /* Stats historique */
+    .stat-value { font-size: var(--font-size-2xl); }
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   7. ÉCRANS TRÈS HAUTS — hauteur ≥ 900px
+   
+   Appareils ciblés :
+   • iPhone 15 Pro Max    (430 × 932px)
+   • Samsung Galaxy S24+  (412 × 915px)
+   • Google Pixel 7 Pro   (412 × 892px)
+   ────────────────────────────────────────────────────────────── */
+@media screen and (min-height: 900px) {
+
+    :root {
+        --phi-layout-minor:     40vh;     /* héro légèrement plus grand */
+        --space-content-bottom: 6.5rem;   /* plus de respiration avant la nav */
+    }
+
+    /* Plus d'espace dans le dashboard */
+    .welcome-card-pro { gap: var(--space-6); }
+    .daily-stat-compact { padding: var(--space-5); }
+
+    /* Fiche produit : plus de padding */
+    .product-details-content {
+        padding-top: var(--space-10);
+    }
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   8. MODE PAYSAGE — smartphones en orientation horizontale
+   
+   Quand l'utilisateur tourne son téléphone.
+   On réorganise le dashboard pour profiter de la largeur.
+   ────────────────────────────────────────────────────────────── */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+
+    :root {
+        --phi-layout-minor:  30vh;
+        --size-nav-height:   3.5rem;   /* nav plus fine */
+    }
+
+    /* Dashboard : deux colonnes en paysage */
+    #view-home .scroll-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+        padding-top: var(--space-4);
+    }
+
+    .welcome-card-pro {
+        margin: 0;
+        grid-column: 1;
+    }
+
+    .daily-stat-compact {
+        margin: 0;
+        grid-column: 2;
+        align-self: start;
+    }
+
+    /* En-tête scanner : déjà géré par safe-area + espace haut */
+    .app-header-dark {
+        padding-bottom: var(--space-4);
+        margin-bottom: var(--space-3);
+    }
+
+    /* Fiche produit en paysage */
+    .product-details-content {
+        padding-top: var(--space-4);
+        padding-bottom: 5rem;
+    }
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   9. HAUTE DENSITÉ DE PIXELS — écrans Retina et Super AMOLED
+   
+   Sur les écrans à 3x de densité (iPhone Pro, Pixel 7+, S23+),
+   les bordures de 1px CSS font en réalité 3px physiques.
+   On peut donc les affiner visuellement.
+   ────────────────────────────────────────────────────────────── */
+@media screen and (min-resolution: 3dppx) {
+
+    .product-item,
+    .c-card-pro,
+    .setting-item,
+    .daily-stat-compact,
+    .tech-badge {
+        border-width: 0.5px;  /* = 1.5px physique sur Retina 3x */
+    }
+}
+
+/* =============================================================
+   15. NOUVEAUX COMPOSANTS UI (Modals, Toasts, Loaders)
+   ============================================================= */
+
+/* Couches UI globales */
+.ui-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#modal-container {
+    background: var(--color-overlay-dark-heavy);
+    backdrop-filter: blur(4px);
+    pointer-events: auto;
+}
+
+#toast-container {
+    height: auto;
+    top: 20px;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+#loading-overlay {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    flex-direction: column;
+    gap: 15px;
+}
+
+#loading-overlay.visible {
+    display: flex;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+#loading-overlay p {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-brand-darkest);
+}
+
+/* Modal Proserpine */
+.modal-pro {
+    background: var(--color-bg-surface);
+    width: 90%;
+    max-width: 340px;
+    border-radius: var(--radius-2xl);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+    animation: modalSlideIn 0.3s cubic-bezier(0.17, 0.84, 0.44, 1);
+}
+
+@keyframes modalSlideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-pro h3 {
+    margin-bottom: var(--space-3);
+    color: var(--color-brand-darkest);
+}
+
+.modal-pro p {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-6);
+    line-height: 1.5;
+}
+
+.modal-actions {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.modal-btn {
+    flex: 1;
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    border: none;
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.modal-btn:active { transform: scale(0.95); }
+
+.modal-btn-confirm {
+    background: var(--color-brand-primary);
+    color: white;
+}
+
+.modal-btn-cancel {
+    background: var(--color-bg-gray);
+    color: var(--color-text-muted);
+}
+
+/* Toast Notifications */
+.toast-pro {
+    background: var(--color-brand-darkest);
+    color: white;
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    pointer-events: auto;
+    animation: toastPop 0.3s cubic-bezier(0.17, 0.84, 0.44, 1);
+}
+
+@keyframes toastPop {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.toast-pro.success { border-left: 4px solid var(--color-status-good); }
+.toast-pro.error { border-left: 4px solid var(--color-status-danger); }
+
+/* Spinner Pro */
+.spinner-pro {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--color-brand-primary-light);
+    border-top: 4px solid var(--color-brand-primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Skeleton Loader */
+.skeleton-loader {
+    background: #e2e8f0;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+}
+
+.skeleton-loader::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Utility Classes for Loading */
+.loading-text-sm { height: 14px; width: 60%; margin-bottom: 8px; }
+.loading-text-lg { height: 20px; width: 90%; margin-bottom: 12px; }
+.loading-circle { border-radius: 50%; width: 48px; height: 48px; }
+
+/* Button Loading State */
+button.loading {
+    color: transparent !important;
+    position: relative;
+    pointer-events: none;
+}
+
+button.loading::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: calc(50% - 10px);
+    left: calc(50% - 10px);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+/* 16. CLASSES SÉMANTIQUES (Correction Inline CSS) */
+
+.no-margin-bottom {
+    margin-bottom: 0 !important;
+}
+
+.icon-btn-glass {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: none !important;
+    color: white !important;
+}
+
+.history-stats-spacing {
+    margin: 20px 24px;
+}
+
+.scanner-full-reader {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.profile-header-curved {
+    margin-bottom: 32px;
+    border-radius: 0 0 32px 32px;
+}
+
+.header-spacing-algo {
+    margin-bottom: 24px;
+}
+
+.tip-card-footer {
+    margin-top: 24px;
+    color: var(--text-muted);
+    text-align: center;
+    font-style: italic;
+}
+
+/* =============================================================
+   17. AUTHENTIFICATION
+   ============================================================= */
+
+#view-auth {
+    background: var(--color-bg-app);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-container {
+    background: var(--color-bg-surface);
+    width: 90%;
+    max-width: 400px;
+    padding: var(--space-8);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+    animation: modalSlideIn 0.4s var(--transition-smooth);
+}
+
+.auth-logo {
+    width: 64px;
+    height: 64px;
+    background: var(--color-brand-primary-light);
+    border-radius: var(--radius-phi);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-6);
+}
+
+.auth-logo span {
+    color: var(--color-brand-primary);
+    font-size: 32px;
+}
+
+.auth-header h2 {
+    color: var(--color-brand-darkest);
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-2);
+}
+
+.auth-header p {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-md);
+    margin-bottom: var(--space-8);
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.input-group {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.input-group label {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-brand-darkest);
+    padding-left: var(--space-1);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.input-group input {
+    width: 100%;
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--color-border-default);
+    background: var(--color-bg-gray);
+    font-size: var(--font-size-md);
+    color: var(--color-brand-darkest);
+    transition: all var(--transition-fast);
+}
+
+.input-group input:focus {
+    background: var(--color-bg-surface);
+    border-color: var(--color-brand-primary);
+    outline: none;
+    box-shadow: 0 0 0 4px var(--color-brand-primary-glow);
+}
+
+.auth-toggle-text {
+    margin-top: var(--space-6);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+.text-btn {
+    background: none;
+    border: none;
+    color: var(--color-brand-primary);
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    padding: var(--space-1);
+    transition: opacity 0.2s;
+}
+
+.text-btn:hover {
+    opacity: 0.8;
+}
+
+#auth-submit-btn {
+    margin-top: var(--space-4);
+    width: 100%;
+    padding: var(--space-4);
+    background: var(--color-brand-primary);
+    color: white;
+    border-radius: var(--radius-lg);
+    border: none;
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    box-shadow: var(--shadow-nav-btn);
+}
+    /* font-size: 64px;
+    color: var(--brand-primary);
+    margin-bottom: 20px;
+} */
+
+.back-home-btn-shadow {
+    width: auto;
+    padding: 12px 24px;
+    border: none;
+    box-shadow: var(--shadow-pro);
+}
+

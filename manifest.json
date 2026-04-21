@@ -1,0 +1,38 @@
+{
+  "name": "Proserpine - Impact & Tri",
+  "short_name": "Proserpine",
+  "description": "L'assistant intelligent pour le tri des déchets et l'analyse de l'impact environnemental de vos produits.",
+  "lang": "fr-FR",
+  "categories": ["lifestyle", "utilities", "environment"],
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#F3F5F4",
+  "theme_color": "#071E12",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "url": "home.html",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Profil",
+      "url": "profile.html",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

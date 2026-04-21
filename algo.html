@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Proserpine — Algorithme</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#071E12" />
+  </head>
+  <body>
+    <div id="mobile-frame">
+      <main id="app-content">
+        <section id="view-algo" class="view active">
+          <header class="app-header-dark header-spacing-algo">
+            <div class="header-content no-margin-bottom">
+              <button class="icon-btn-square back-btn icon-btn-glass" id="back-to-profile" aria-label="Retour">
+                <span class="material-symbols-rounded">arrow_back</span>
+              </button>
+              <h3 id="algo-title">Calcul du Score</h3>
+            </div>
+          </header>
+          <div class="scroll-content text-content-page">
+            <p>L'Eco-Score Proserpine repose sur une transparence totale. Il est calculé en deux étapes majeures :</p>
+
+            <h4>1. Le Socle ACV (80% de la note)</h4>
+            <p>Nous analysons 6 indicateurs environnementaux clés : Carbone, Consommation d'eau, Impact sur la biodiversité du sol, Eutrophisation, Qualité de l'air et Ressources fossiles.</p>
+
+            <h4>2. Les Modérateurs (Bonus/Malus)</h4>
+            <p>Le score de base est ajusté selon des critères spécifiques :</p>
+            <ul>
+              <li><strong>Emballage :</strong> Bonus pour le vrac (+10) ou le verre réutilisable, malus pour le plastique (-10) ou le non-recyclable (-20).</li>
+              <li><strong>Transport :</strong> Malus important pour le fret aérien (-30).</li>
+              <li><strong>Agriculture :</strong> Bonus pour le BIO (+10) ou le régénératif (+15).</li>
+              <li><strong>NOVA :</strong> Pénalité pour les produits ultra-transformés (-20).</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module">
+      import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
+      import { auth } from './firebase-config.js';
+
+      onAuthStateChanged(auth, (user) => {
+        if (!user) {
+          window.location.href = 'auth.html';
+        }
+      });
+
+      document.getElementById("back-to-profile").addEventListener("click", () => {
+        window.location.href = 'profile.html';
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Proserpine — Fiche Produit</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#071E12" />
+  </head>
+  <body>
+    <div id="mobile-frame">
+      <main id="app-content">
+        <section id="view-product" class="view active">
+          <header class="product-top-bar">
+            <button class="icon-btn-square" id="back-to-home" aria-label="Retour à l'accueil">
+              <span class="material-symbols-rounded" aria-hidden="true">arrow_back</span>
+            </button>
+            <button class="icon-btn-square" aria-label="Enregistrer le produit">
+              <span class="material-symbols-rounded" aria-hidden="true">bookmark_border</span>
+            </button>
+          </header>
+
+          <div class="product-hero-container">
+            <div class="gauge-wrapper" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+              <svg class="progress-ring" width="160" height="160">
+                <circle class="progress-ring__background" stroke="#DFE8E3" stroke-width="10" fill="transparent" r="70" cx="80" cy="80" />
+                <circle class="progress-ring__circle" stroke="var(--brand-primary)" stroke-width="12" stroke-linecap="round" fill="transparent" r="70" cx="80" cy="80" />
+              </svg>
+              <div class="gauge-content">
+                <h3 id="score-display">–</h3>
+                <span>/100</span>
+              </div>
+            </div>
+            <div class="mini-product-overlay" id="product-hero-img">
+              <span class="material-symbols-rounded" aria-hidden="true">water_bottle</span>
+            </div>
+          </div>
+
+          <div class="product-details-content">
+            <div class="product-title-row">
+              <div class="title-group">
+                <h2 id="product-name" class="uppercase-title">Chargement...</h2>
+                <p id="product-brand" class="brand">Marque: –</p>
+              </div>
+            </div>
+
+            <div class="badges-row">
+              <div class="tech-badge" id="badge-origin">
+                <span class="material-symbols-rounded">public</span> –
+              </div>
+              <div class="tech-badge" id="badge-nova">
+                <span class="material-symbols-rounded">science</span> –
+              </div>
+              <div class="tech-badge" id="badge-co2">
+                <span class="material-symbols-rounded">co2</span> –
+              </div>
+            </div>
+
+            <div class="analysis-box">
+              <div class="analysis-header">
+                <span class="material-symbols-rounded">analytics</span>
+                <h5>Verdict Proserpine</h5>
+              </div>
+              <p id="product-verdict"></p>
+            </div>
+
+            <div class="consigne-section">
+              <h3>Action Immédiate</h3>
+              <div class="consigne-grid">
+                <div class="c-card-pro">
+                  <span class="material-symbols-rounded">recycling</span>
+                  <div class="c-info">
+                    <strong id="bin-name">–</strong>
+                    <p>Dans la province de Liège</p>
+                  </div>
+                </div>
+                <div class="c-card-pro">
+                  <span class="material-symbols-rounded">cleaning_services</span>
+                  <div class="c-info">
+                    <strong>Consigne</strong>
+                    <p id="bin-instruction">–</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="alternatives-section">
+              <h3>Passer au Zero Déchet ?</h3>
+              <div class="alt-card">
+                <div class="alt-img">
+                  <span class="material-symbols-rounded">water_drop</span>
+                </div>
+                <div class="alt-info">
+                  <h5>Gourde Inox Qwetch</h5>
+                  <p>Recommandé (98/100)</p>
+                </div>
+                <span class="material-symbols-rounded ext-arrow">chevron_right</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="product.js"></script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Proserpine — Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#071E12" />
+  </head>
+  <body>
+    <div id="mobile-frame">
+      <main id="app-content">
+        <!-- VUE ACCUEIL (DASHBOARD) -->
+        <section id="view-home" class="view active">
+          <div class="top-nav-brand">
+            <div class="brand-logo">
+              <span class="material-symbols-rounded" aria-hidden="true">energy_savings_leaf</span>
+              <h2>PROSERPINE</h2>
+            </div>
+          </div>
+
+          <header class="app-header-dark">
+            <div class="header-content">
+              <div>
+                <h3 id="user-greeting">
+                  Heureux de vous revoir, <span id="user-name">...</span>
+                </h3>
+              </div>
+              <button class="icon-btn-square icon-btn-glass" id="go-to-history" aria-label="Voir l'historique">
+                <span class="material-symbols-rounded" aria-hidden="true">history</span>
+              </button>
+            </div>
+          </header>
+
+          <div class="scroll-content dashboard-content">
+            <div class="welcome-card-pro">
+              <div class="w-text">
+                <h4>Prêt à trier ?</h4>
+                <p>Recherchez un produit pour découvrir son impact.</p>
+              </div>
+              <div class="search-input-wrapper home-search-box">
+                <input type="text" id="home-search-input" placeholder="Produit (ex: Nutella, Coca...)" aria-label="Rechercher un produit" />
+                <button id="home-search-btn" aria-label="Lancer la recherche">
+                  <span class="material-symbols-rounded" aria-hidden="true">search</span>
+                </button>
+              </div>
+              <div id="home-search-results" class="mini-suggestions" aria-live="polite"></div>
+            </div>
+
+            <div class="daily-stat-compact">
+              <div class="d-icon">
+                <span class="material-symbols-rounded" aria-hidden="true">eco</span>
+              </div>
+              <div class="d-text">
+                <strong>Le saviez-vous ?</strong>
+                <p>Le recyclage du verre permet d'économiser 20% d'énergie par rapport à sa fabrication neuve.</p>
+              </div>
+            </div>
+            
+            <!-- Liste Historique (intégrée au dashboard ou accessible via bouton) -->
+            <div class="history-preview">
+              <h3 class="section-subtitle">Derniers produits</h3>
+              <div id="history-list" class="product-list" aria-live="polite">
+                <!-- Peuplé par home.js -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <nav id="bottom-nav" role="tablist">
+        <a href="home.html" class="nav-item active">
+          <span class="material-symbols-rounded" aria-hidden="true">home</span>
+          <span>Accueil</span>
+        </a>
+        <a href="tips.html" class="nav-item">
+          <span class="material-symbols-rounded" aria-hidden="true">lightbulb</span>
+          <span>Astuces</span>
+        </a>
+        <a href="home.html" class="nav-item scan-nav-btn" aria-label="Scanner un produit">
+          <div class="scan-nav-circle">
+            <span class="material-symbols-rounded" aria-hidden="true">qr_code_scanner</span>
+          </div>
+        </a>
+        <a href="guide.html" class="nav-item">
+          <span class="material-symbols-rounded" aria-hidden="true">import_contacts</span>
+          <span>Guide</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+          <span class="material-symbols-rounded" aria-hidden="true">person</span>
+          <span>Profil</span>
+        </a>
+      </nav>
+
+      <div id="loading-overlay" class="ui-layer" style="display: none;" aria-hidden="true">
+        <div class="spinner-pro"></div>
+        <p>Chargement...</p>
+      </div>
+      <div id="toast-container" class="ui-layer" style="display: none;" aria-live="assertive"></div>
+    </div>
+
+    <!-- Scripts de moteur -->
+    <script type="module" src="scoring_engine.js"></script>
+    <script type="module" src="logic.js"></script>
+    <script type="module" src="home.js"></script>
+  </body>
+</html>
