@@ -46,22 +46,27 @@ function showToast(message, type = "success") {
 const Auth = {
   init() {
     const form = document.getElementById("auth-form");
-    const toggleBtn = document.getElementById("auth-toggle-btn");
     
+    // Détection du mode (Inscription par défaut, Connexion si paramètre URL ou compte existant)
+    const urlParams = new URLSearchParams(window.location.search);
+    const hasAccount = localStorage.getItem('proserpine_has_account');
+    
+    if (urlParams.get('mode') === 'login' || hasAccount === 'true') {
+      isLoginMode = true;
+    } else {
+      isLoginMode = false;
+    }
+
+    this.updateUI();
+
     // Check if already logged in
     onAuthStateChanged(auth, (user) => {
       if (user) {
+        // Enregistrer qu'un compte a été créé/utilisé sur cet appareil
+        localStorage.setItem('proserpine_has_account', 'true');
         window.location.href = 'home.html';
       }
     });
-
-    if (toggleBtn) {
-      toggleBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        isLoginMode = !isLoginMode;
-        this.updateUI();
-      });
-    }
 
     if (form) {
       form.addEventListener("submit", (e) => this.handleSubmit(e));
@@ -72,8 +77,6 @@ const Auth = {
     const title = document.getElementById("auth-title");
     const subtitle = document.getElementById("auth-subtitle");
     const submitBtn = document.getElementById("auth-submit-btn");
-    const toggleBtn = document.getElementById("auth-toggle-btn");
-    const toggleLabel = document.getElementById("auth-toggle-label");
     const usernameGroup = document.getElementById("group-username");
     const usernameInput = document.getElementById("auth-username");
 
@@ -81,18 +84,14 @@ const Auth = {
       title.textContent = "Se connecter";
       subtitle.textContent = "Content de vous revoir sur Proserpine";
       submitBtn.querySelector('span').textContent = "Connexion";
-      toggleLabel.textContent = "Pas encore de compte ?";
-      toggleBtn.textContent = "S'inscrire";
-      usernameGroup.style.display = "none";
-      usernameInput.required = false;
+      if (usernameGroup) usernameGroup.style.display = "none";
+      if (usernameInput) usernameInput.required = false;
     } else {
       title.textContent = "S'inscrire";
       subtitle.textContent = "Rejoignez la communauté Proserpine";
       submitBtn.querySelector('span').textContent = "Créer un compte";
-      toggleLabel.textContent = "Déjà un compte ?";
-      toggleBtn.textContent = "Se connecter";
-      usernameGroup.style.display = "flex";
-      usernameInput.required = true;
+      if (usernameGroup) usernameGroup.style.display = "flex";
+      if (usernameInput) usernameInput.required = true;
     }
   },
 

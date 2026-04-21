@@ -9,8 +9,8 @@ export default async function handler(req, res) {
     // Mode : Détails d'un produit
     url = `https://world.openfoodfacts.org/api/v2/product/${barcode}.json?fields=${fields}`;
   } else if (query) {
-    // Mode : Recherche
-    url = `https://world.openfoodfacts.org/api/v2/search?search_terms=${encodeURIComponent(query)}&fields=${fields}&page_size=8&json=1`;
+    // Mode : Recherche (Utilisation de l'endpoint CGI plus stable)
+    url = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${encodeURIComponent(query)}&fields=${fields}&page_size=8&json=1`;
   } else {
     return res.status(400).json({ error: 'Paramètres manquants (barcode ou query)' });
   }

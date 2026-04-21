@@ -46,7 +46,12 @@
         if (user) {
           window.location.href = 'home.html';
         } else {
-          window.location.href = 'auth.html';
+          const hasAccount = localStorage.getItem('proserpine_has_account');
+          if (hasAccount === 'true') {
+            window.location.href = 'auth.html?mode=login';
+          } else {
+            window.location.href = 'auth.html';
+          }
         }
       });
     </script>

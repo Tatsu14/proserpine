@@ -29,7 +29,7 @@ function initPage(user) {
     logoutBtn.addEventListener("click", async () => {
       try {
         await signOut(auth);
-        window.location.href = 'auth.html';
+        window.location.href = 'auth.html?mode=login';
       } catch (error) {
         showToast("Erreur lors de la déconnexion", "error");
       }
