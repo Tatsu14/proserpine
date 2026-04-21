@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proserpine — Redirection...</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <style>
       body {
         background: var(--color-bg-dark);
@@ -40,7 +40,7 @@
 
     <script type="module">
       import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
-      import { auth } from './firebase-config.js';
+      import { auth } from './js/firebase-config.js';
 
       onAuthStateChanged(auth, (user) => {
         if (user) {
