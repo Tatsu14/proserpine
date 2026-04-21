@@ -55,6 +55,12 @@ function renderProduct(product) {
 
   document.getElementById("bin-name").innerText = binName.toUpperCase();
   document.getElementById("bin-instruction").innerText = instruction;
+
+  // Débogage
+  const debugEl = document.getElementById("debug-content");
+  if (debugEl) {
+    debugEl.textContent = JSON.stringify(product, null, 2);
+  }
 }
 
 // Auth Guard
