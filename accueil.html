@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-    <link rel="manifest" href="manifest.json" />
+    <link rel="manifest" href="manifeste.json" />
     <meta name="theme-color" content="#071E12" />
   </head>
   <body>
@@ -64,7 +64,7 @@
             <div class="history-preview">
               <h3 class="section-subtitle">Derniers produits</h3>
               <div id="history-list" class="product-list" aria-live="polite">
-                <!-- Peuplé par home.js -->
+                <!-- Peuplé par accueil.js -->
               </div>
             </div>
           </div>
@@ -72,15 +72,15 @@
       </main>
 
       <nav id="bottom-nav" role="tablist">
-        <a href="home.html" class="nav-item active">
+        <a href="accueil.html" class="nav-item active">
           <span class="material-symbols-rounded" aria-hidden="true">home</span>
           <span>Accueil</span>
         </a>
-        <a href="tips.html" class="nav-item">
+        <a href="astuces.html" class="nav-item">
           <span class="material-symbols-rounded" aria-hidden="true">lightbulb</span>
           <span>Astuces</span>
         </a>
-        <a href="home.html" class="nav-item scan-nav-btn" aria-label="Scanner un produit">
+        <a href="accueil.html" class="nav-item scan-nav-btn" aria-label="Scanner un produit">
           <div class="scan-nav-circle">
             <span class="material-symbols-rounded" aria-hidden="true">qr_code_scanner</span>
           </div>
@@ -89,22 +89,23 @@
           <span class="material-symbols-rounded" aria-hidden="true">import_contacts</span>
           <span>Guide</span>
         </a>
-        <a href="profile.html" class="nav-item">
+        <a href="profil.html" class="nav-item">
           <span class="material-symbols-rounded" aria-hidden="true">person</span>
           <span>Profil</span>
         </a>
       </nav>
 
-      <div id="loading-overlay" class="ui-layer" style="display: none;" aria-hidden="true">
+      <div id="loading-overlay" class="ui-layer" aria-hidden="true">
         <div class="spinner-pro"></div>
         <p>Chargement...</p>
       </div>
-      <div id="toast-container" class="ui-layer" style="display: none;" aria-live="assertive"></div>
+      <div id="toast-container" class="ui-layer" aria-live="assertive"></div>
     </div>
 
     <!-- Scripts de moteur -->
-    <script type="module" src="js/scoring_engine.js"></script>
-    <script type="module" src="js/logic.js"></script>
-    <script type="module" src="js/home.js"></script>
+    <script type="module" src="js/moteur-score.js"></script>
+    <script type="module" src="js/logique.js"></script>
+    <script type="module" src="js/accueil.js"></script>
   </body>
 </html>
+

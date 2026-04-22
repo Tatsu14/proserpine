@@ -1,309 +1,11 @@
-/* =============================================================
-   PROSERPINE — DESIGN TOKENS (Système de variables CSS)
-   =============================================================
-
-   TABLE DES MATIÈRES :
-   1.  Couleurs — Marque (Brand)
-   2.  Couleurs — Arrière-plans (Backgrounds)
-   3.  Couleurs — Textes
-   4.  Couleurs — Bordures
-   5.  Couleurs — Statuts sémantiques
-   6.  Couleurs — Catégories du guide de tri
-   7.  Couleurs — Transparences & overlays
-   8.  Typographie — Tailles
-   9.  Typographie — Graisses (Weights)
-   10. Espacements (Spacing)
-   11. Rayons de bordure (Border Radius)
-   12. Ombres (Shadows)
-   13. Dimensions — Composants UI
-   14. Transitions & Animations
-   ============================================================= */
-
-:root {
-
-    /* ── 1. COULEURS — MARQUE ──────────────────────────────── */
-    --color-brand-darkest:          #071E12;
-    --color-brand-primary:          #00CC66;
-    --color-brand-primary-dark:     #00994C;
-    --color-brand-primary-light:    rgba(0, 204, 102, 0.10);
-    --color-brand-primary-glow:     rgba(0, 204, 102, 0.40);
-
-    /* ── 2. COULEURS — ARRIÈRE-PLANS ──────────────────────── */
-    --color-bg-app:                 #E2E8F0;
-    --color-bg-gray:                #F3F5F4;
-    --color-bg-surface:             #FFFFFF;
-    --color-bg-dot-pattern:         #C2D4C9;
-
-    /* ── 3. COULEURS — TEXTES ─────────────────────────────── */
-    --color-text-dark:              #0F1713;
-    --color-text-muted:             #596B62;
-    --color-text-light:             #A4B5AC;
-    --color-text-on-dark:           #FFFFFF;
-    --color-text-on-dark-muted:     rgba(255, 255, 255, 0.60);
-    --color-text-on-dark-faint:     rgba(255, 255, 255, 0.80);
-
-    /* ── 4. COULEURS — BORDURES ───────────────────────────── */
-    --color-border-default:         #E4EBE6;
-    --color-border-brand:           var(--color-brand-primary);
-    --color-border-on-dark:         rgba(255, 255, 255, 0.15);
-    --color-border-on-dark-strong:  rgba(255, 255, 255, 0.10);
-    --color-border-mobile-frame:    #DFE6E1;
-
-    /* ── 5. COULEURS — STATUTS SÉMANTIQUES ────────────────── */
-    --color-status-good:            #27AE60;
-    --color-status-warning:         #FF9800;
-    --color-status-danger:          #E74C3C;
-    --color-status-good-bg:         rgba(0, 204, 102, 0.10);
-    --color-status-warning-bg:      rgba(255, 152, 0, 0.10);
-
-    /* ── 6. COULEURS — CATÉGORIES GUIDE ──────────────────── */
-    --color-guide-pmc:              #3498DB;
-    --color-guide-paper:            #F1C40F;
-    --color-guide-paper-text:       #2C3E50;
-    --color-guide-organic:          #27AE60;
-    --color-guide-glass:            #95A5A6;
-
-    /* ── 7. COULEURS — OVERLAYS & TRANSPARENCES ──────────── */
-    --color-overlay-dark-heavy:     rgba(0, 0, 0, 0.80);
-    --color-overlay-dark-medium:    rgba(0, 0, 0, 0.50);
-    --color-overlay-white-faint:    rgba(255, 255, 255, 0.08);
-    --color-overlay-white-subtle:   rgba(255, 255, 255, 0.10);
-    --color-overlay-white-card:     rgba(255, 255, 255, 0.05);
-    --color-gradient-card-shine:    linear-gradient(135deg, rgba(255,255,255,0.10) 0%, transparent 100%);
-
-    /* ── 8. TYPOGRAPHIE — TAILLES ─────────────────────────── */
-    --font-size-2xs:                0.625rem;   /* 10px — étiquettes timeline */
-    --font-size-xs:                 0.6875rem;  /* 11px — nav, c-info */
-    --font-size-sm:                 0.75rem;    /* 12px — badges, sous-titres */
-    --font-size-base:               0.8125rem;  /* 13px — texte courant secondaire */
-    --font-size-md:                 0.875rem;   /* 14px — texte courant principal */
-    --font-size-lg:                 1rem;       /* 16px — corps, brand logo */
-    --font-size-xl:                 1.125rem;   /* 18px — titres de section */
-    --font-size-2xl:                1.25rem;    /* 20px — titres profil */
-    --font-size-3xl:                1.5rem;     /* 24px — titres header */
-    --font-size-4xl:                1.625rem;   /* 26px — titre produit */
-    --font-size-5xl:                2.618rem;   /* φ² × 1rem = 41.9px — score jauge (φ²) */
-    --font-size-icon-large:         2.5rem;     /* 40px — grande icône tip */
-    --font-size-icon-coming-soon:   4rem;       /* 64px — icône coming soon */
-
-    /* ── 9. TYPOGRAPHIE — GRAISSES ────────────────────────── */
-    --font-weight-regular:          400;
-    --font-weight-semibold:         600;
-    --font-weight-bold:             700;
-    --font-weight-extrabold:        800;
-    --font-weight-black:            900;
-
-    /* ── 10. ESPACEMENTS ──────────────────────────────────── */
-    --space-1:                      0.25rem;    /*  4px */
-    --space-2:                      0.5rem;     /*  8px */
-    --space-3:                      0.75rem;    /* 12px */
-    --space-4:                      1rem;       /* 16px */
-    --space-5:                      1.25rem;    /* 20px */
-    --space-6:                      1.5rem;     /* 24px */
-    --space-8:                      2rem;       /* 32px */
-    --space-10:                     2.5rem;     /* 40px */
-    --space-12:                     3rem;       /* 48px */
-    --space-content-bottom:         5.625rem;   /* 90px — espace nav bas */
-
-    /* ── 11. RAYONS DE BORDURE ────────────────────────────── */
-    --radius-xs:                    0.375rem;   /*  6px */
-    --radius-sm:                    0.5rem;     /*  8px */
-    --radius-md:                    0.75rem;    /* 12px */
-    --radius-lg:                    1rem;       /* 16px */
-    --radius-xl:                    1.25rem;    /* 20px */
-    --radius-2xl:                   1.5rem;     /* 24px */
-    --radius-3xl:                   2rem;       /* 32px */
-    --radius-phi:                   1.618rem;   /* φ × 1rem = 25.9px — rayon basé sur le nombre d'or */
-    --radius-full:                  50%;
-
-    /* ── 12. OMBRES ───────────────────────────────────────── */
-    --shadow-sm:                    0 0.25rem 0.625rem rgba(0,0,0,0.03);
-    --shadow-md:                    0 0.5rem 1.875rem rgba(0,0,0,0.06);
-    --shadow-lg:                    0 0.625rem 2.5rem rgba(0,0,0,0.10);
-    --shadow-brand-frame:           0 1.25rem 3.75rem rgba(0, 204, 102, 0.15);
-    --shadow-nav-btn:               0 0.25rem 0.9375rem rgba(0,0,0,0.10);
-    --shadow-search:                0 0.25rem 0.75rem rgba(0,0,0,0.10);
-    --shadow-scan-laser:            0 0 0.625rem var(--color-brand-primary);
-    --shadow-pro:                   var(--shadow-lg);
-
-    /* ── 13. DIMENSIONS — COMPOSANTS UI ───────────────────── */
-    --size-icon-btn:                2.5rem;     /* 40px — boutons icônes */
-    --size-icon-item:               3rem;       /* 48px — image item liste */
-    --size-icon-alt:                2.75rem;    /* 44px — icône alternative */
-    --size-icon-tip:                5rem;       /* 80px — icône tip card */
-    --size-timeline-dot:            2.25rem;    /* 36px — dot timeline */
-    --size-d-icon:                  3rem;       /* 48px — icône daily stat */
-    --size-scan-circle:             3.5rem;     /* 56px — cercle scan nav */
-    --size-gauge:                   10rem;      /* 160px — jauge score */
-    --size-mini-product:            6.18rem;    /* φ⁻¹ × 10rem = 98.9px — overlay produit (jauge/φ) */
-    --size-ptr-indicator:           2.5rem;     /* 40px — pull-to-refresh */
-    --size-mobile-width:            24.375rem;  /* ~390px */
-    --size-mobile-height:           52.75rem;   /* ~844px */
-    --size-nav-height:              5rem;       /* 80px — barre de navigation */
-
-    /* ── 14. TRANSITIONS & ANIMATIONS ────────────────────── */
-    --transition-fast:              0.2s ease;
-    --transition-normal:            0.3s ease;
-    --transition-smooth:            0.3s cubic-bezier(0.1, 0.7, 0.1, 1);
-    --transition-gauge:             1.5s cubic-bezier(0.4, 0, 0.2, 1);
-    --animation-scan-duration:      4s;
-    --animation-pulse-duration:     2s;
-    --animation-ptr-duration:       1s;
-
-    /* ── 15. NOMBRE D'OR — φ (Golden Ratio) ─────────────────
-    |
-    |  φ = 1,6180339887… (phi)
-    |  Propriété fondamentale : a/b = (a+b)/a = φ
-    |
-    |  Applications dans ce design :
-    |  ┌─────────────────────────────────────────────────────┐
-    |  │ RATIO HÉRO / CONTENU (vue produit)                  │
-    |  │   Héro   : 38,2 vh  (= 1/(1+φ) × 100)              │
-    |  │   Contenu: 61,8 vh  (= φ/(1+φ) × 100)              │
-    |  ├─────────────────────────────────────────────────────┤
-    |  │ RATIO JAUGE / OVERLAY MINI-PRODUIT                  │
-    |  │   Jauge    : 10rem (160px)                          │
-    |  │   Overlay  : 10rem × φ⁻¹ = 6,18rem (≈99px)         │
-    |  │   Rapport  : 160 / 99 ≈ φ ✓                         │
-    |  ├─────────────────────────────────────────────────────┤
-    |  │ SCORE DE LA JAUGE (typographie)                     │
-    |  │   2,618rem = 1rem × φ² (≈ 41,9px)                  │
-    |  ├─────────────────────────────────────────────────────┤
-    |  │ RAYON DE BORDURE φ                                  │
-    |  │   1,618rem = 1rem × φ (≈ 25,9px)                   │
-    |  └─────────────────────────────────────────────────────┘
-    |
-    |  Constantes mathématiques ──────────────────────────── */
-    --phi:                  1.6180339887;    /* φ — le nombre d'or */
-    --phi-inverse:          0.6180339887;    /* 1/φ = φ - 1 */
-    --phi-sq:               2.6180339887;    /* φ² = φ + 1 */
-    --phi-inverse-sq:       0.3819660113;    /* 1/φ² */
-
-    /*  Proportions de mise en page ─────────────────────── */
-    --phi-layout-minor:     38.2vh;          /* 1/(1+φ) — zone plus petite */
-    --phi-layout-major:     61.8vh;          /* φ/(1+φ) — zone plus grande */
-
-    /*  Échelle typographique φ (base : 1rem = 16px) ────── */
-    /*  Chaque palier = palier précédent × φ               */
-    --phi-type-xs:          0.382rem;        /* 1rem / φ²  =  6,1px */
-    --phi-type-sm:          0.618rem;        /* 1rem / φ   =  9,9px */
-    --phi-type-md:          1rem;            /* base       = 16,0px */
-    --phi-type-lg:          1.618rem;        /* 1rem × φ   = 25,9px */
-    --phi-type-xl:          2.618rem;        /* 1rem × φ²  = 41,9px */
-    --phi-type-2xl:         4.236rem;        /* 1rem × φ³  = 67,8px */
-
-    /*  Échelle d'espacement φ ──────────────────────────── */
-    /*  Utilisable pour tout nouvel élément                 */
-    --phi-space-xs:         0.382rem;        /*  6,1px */
-    --phi-space-sm:         0.618rem;        /*  9,9px */
-    --phi-space-md:         1rem;            /* 16,0px */
-    --phi-space-lg:         1.618rem;        /* 25,9px */
-    --phi-space-xl:         2.618rem;        /* 41,9px */
-    --phi-space-2xl:        4.236rem;        /* 67,8px */
-
-    /* ── ALIASES DE RÉTRO-COMPATIBILITÉ ──────────────────── */
-    /* Ces alias permettent de garder l'ancien code fonctionnel
-       pendant une migration progressive. */
-    --brand-dark:       var(--color-brand-darkest);
-    --brand-primary:    var(--color-brand-primary);
-    --brand-primary-dark: var(--color-brand-primary-dark);
-    --bg-gray:          var(--color-bg-gray);
-    --surface-white:    var(--color-bg-surface);
-    --text-dark:        var(--color-text-dark);
-    --text-muted:       var(--color-text-muted);
-}
-
-/* Suppression du délai 300ms sur les éléments cliquables (iOS < 13) */
-.nav-item,
-.icon-btn-square,
-.product-item,
-.guide-card,
-.setting-item,
-.suggestion-item,
-.c-card-pro,
-.cta-scan-btn,
-.back-btn,
-.back-to-home {
-    touch-action: manipulation;
-}
+@import url('tokens.css');
+@import url('base.css');
+@import url('components.css');
 
 /* =============================================================
-   RESET & BASE
+   VUES SPECIFIQUES & COMPOSANTS AVANCÉS
    ============================================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Outfit', sans-serif;
-    -webkit-tap-highlight-color: transparent;
-}
 
-html {
-    font-size: 100%;
-}
-
-body {
-    background-color: var(--color-bg-app);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
-}
-
-/* =============================================================
-   CADRE MOBILE
-   ============================================================= */
-#mobile-frame {
-    width: 100%;
-    height: 100vh;       /* fallback pour anciens navigateurs */
-    height: 100dvh;      /* dvh = Dynamic Viewport Height — corrige la barre iOS Safari */
-    background-color: var(--color-bg-gray);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    color: var(--color-text-dark);
-}
-
-@media screen and (min-width: 600px) {
-    #mobile-frame {
-        width: var(--size-mobile-width);
-        height: var(--size-mobile-height);
-        border-radius: 2.5rem;
-        border: 0.25rem solid var(--color-border-mobile-frame);
-        box-shadow: var(--shadow-brand-frame);
-    }
-}
-
-#app-content {
-    flex: 1;
-    position: relative;
-    z-index: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch; /* défilement momentum sur iOS */
-    overscroll-behavior-y: contain;    /* empêche le scroll de "remonter" à la page parente */
-}
-
-/* =============================================================
-   VUES
-   ============================================================= */
-.view {
-    display: none;
-    height: 100%;
-    animation: fadeIn var(--transition-normal) forwards;
-    transition: transform var(--transition-smooth);
-}
-
-.view.active {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
 
 /* =============================================================
    PULL TO REFRESH
@@ -1430,6 +1132,110 @@ body {
 .yellow-box  { background: var(--color-guide-paper); color: var(--color-guide-paper-text); }
 .green-bin   { background: var(--color-guide-organic); }
 .glass-bubble { background: var(--color-guide-glass); }
+.dark-bin    { background: #4a4a4a; }
+.red-warning { background: #e74c3c; }
+
+/* ── DÉTAILS DU GUIDE DE TRI ────────────────────────── */
+.detail-section {
+    background: var(--color-bg-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    margin-bottom: var(--space-4);
+    border: 0.0625rem solid var(--color-border-default);
+    box-shadow: var(--shadow-sm);
+}
+
+.detail-section h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-extrabold);
+    margin-bottom: var(--space-3);
+    color: var(--color-brand-darkest);
+}
+
+.detail-section h3 .material-symbols-rounded {
+    color: var(--color-brand-primary-dark);
+    font-size: 1.5rem;
+}
+
+.detail-section.warning {
+    border-left: 0.25rem solid var(--color-status-danger);
+}
+
+.detail-section.warning h3 { color: var(--color-status-danger); }
+.detail-section.warning h3 .material-symbols-rounded {
+    color: var(--color-status-danger);
+}
+
+.detail-section.tip {
+    border-left: 0.25rem solid var(--color-status-warning);
+    background: #FFF9E6;
+}
+
+.detail-section.tip h3 { color: #856404; }
+.detail-section.tip h3 .material-symbols-rounded {
+    color: var(--color-status-warning);
+}
+
+.detail-section.info {
+    border-left: 0.25rem solid var(--color-brand-primary);
+}
+
+.detail-section ul {
+    list-style: none;
+}
+
+.detail-section ul li {
+    position: relative;
+    padding-left: var(--space-5);
+    margin-bottom: var(--space-2);
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+}
+
+.detail-section ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0.5rem;
+    color: var(--color-brand-primary-dark);
+    font-weight: var(--font-weight-black);
+}
+
+.accepted-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.accepted-grid .item {
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+}
+
+.accepted-grid .item strong {
+    color: var(--color-brand-darkest);
+}
+
+.sync-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-bold);
+    margin-top: var(--space-6);
+    padding-top: var(--space-4);
+    border-top: 0.0625rem dashed var(--color-border-default);
+    text-transform: uppercase;
+    letter-spacing: 0.03125rem;
+}
+
+.sync-info .material-symbols-rounded {
+    font-size: var(--font-size-lg);
+    color: var(--color-brand-primary);
+}
 
 .alert-box-warn {
     grid-column: span 2;

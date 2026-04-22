@@ -87,8 +87,10 @@ class ImpactEngine {
     }
 }
 
-// Export pour global (avant liaison dans logic.js)
+// Export pour global (avant liaison dans logique.js)
 window.ProserpineEngine = {
     CalculatorClass: EcoScoreCalculator,
     ImpactClass: ImpactEngine
 };
+
+

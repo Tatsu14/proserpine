@@ -103,7 +103,7 @@ export const DataManager = {
     if (nova === 1) processingLevel = "UNPROCESSED";
     else if (nova === 4) processingLevel = "ULTRA_PROCESSED";
 
-    // Calcul Proserpine via scoring_engine.js (chargé globalement via script tag)
+    // Calcul Proserpine via moteur-score.js (chargé globalement via script tag)
     const attributes = {
       carbonScore: efScore,
       waterScore: efScore,
@@ -189,3 +189,5 @@ export const DataManager = {
     }
   }
 };
+
+

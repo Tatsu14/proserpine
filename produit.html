@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-    <link rel="manifest" href="manifest.json" />
+    <link rel="manifest" href="manifeste.json" />
     <meta name="theme-color" content="#071E12" />
   </head>
   <body>
@@ -101,11 +101,11 @@
             </div>
             
             <!-- Section Débogage -->
-            <details class="debug-section" style="margin-top: 24px; opacity: 0.7;">
-              <summary style="cursor: pointer; font-size: 12px; color: #666; font-weight: 600;">
+            <details class="debug-section">
+              <summary>
                 🛠️ Détails techniques du calcul
               </summary>
-              <div id="debug-content" style="background: rgba(0,0,0,0.05); padding: 12px; border-radius: 8px; font-family: monospace; font-size: 11px; margin-top: 8px; white-space: pre-wrap; color: #333;">
+              <div id="debug-content" class="debug-content">
                 Chargement des données...
               </div>
             </details>
@@ -114,6 +114,7 @@
       </main>
     </div>
 
-    <script type="module" src="js/product.js"></script>
+    <script type="module" src="js/produit.js"></script>
   </body>
 </html>
+

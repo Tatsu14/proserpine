@@ -1,5 +1,5 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
-import { auth } from './firebase-config.js';
+import { auth } from './configuration-firebase.js';
 
 function setGaugeProgress(percent) {
   const circle = document.querySelector(".progress-ring__circle");
@@ -14,7 +14,7 @@ function setGaugeProgress(percent) {
 function initPage() {
   const productData = sessionStorage.getItem('proserpine_current_product');
   if (!productData) {
-    window.location.href = 'home.html';
+    window.location.href = 'accueil.html';
     return;
   }
 
@@ -22,7 +22,7 @@ function initPage() {
   renderProduct(product);
 
   document.getElementById("back-to-home").addEventListener("click", () => {
-    window.location.href = 'home.html';
+    window.location.href = 'accueil.html';
   });
 }
 
@@ -66,8 +66,10 @@ function renderProduct(product) {
 // Auth Guard
 onAuthStateChanged(auth, (user) => {
   if (!user) {
-    window.location.href = 'auth.html';
+    window.location.href = 'authentification.html';
   } else {
     initPage();
   }
 });
+
+

@@ -26,12 +26,12 @@
   "shortcuts": [
     {
       "name": "Dashboard",
-      "url": "home.html",
+      "url": "accueil.html",
       "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Profil",
-      "url": "profile.html",
+      "url": "profil.html",
       "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
     }
   ]

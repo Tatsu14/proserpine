@@ -3,54 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Proserpine — Profil</title>
+    <title>Proserpine — Éco-Conseils</title>
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-    <link rel="manifest" href="manifest.json" />
+    <link rel="manifest" href="manifeste.json" />
     <meta name="theme-color" content="#071E12" />
   </head>
   <body>
     <div id="mobile-frame">
       <main id="app-content">
-        <section id="view-profile" class="view active">
-          <header class="app-header-dark profile-header-curved">
-            <div class="header-content no-margin-bottom">
+        <section id="view-tips" class="view active">
+          <header class="app-header-dark">
+            <div class="header-content">
               <div>
-                <p class="greeting">Gestion du compte</p>
-                <h3 id="profile-name">Chargement...</h3>
+                <p class="greeting">L'astuce du jour</p>
+                <h3>Eco-Conseils</h3>
               </div>
-              <button class="icon-btn-square icon-btn-glass" id="logout-btn" aria-label="Déconnexion">
-                <span class="material-symbols-rounded">logout</span>
-              </button>
             </div>
           </header>
-
-          <div class="settings-list">
-            <a href="algo.html" class="setting-item">
-              <span class="material-symbols-rounded">transparency</span>
-              <span>Voir les détails de l'algorithme</span>
-              <span class="material-symbols-rounded arrow">chevron_right</span>
-            </a>
-            <div class="setting-item">
-              <span class="material-symbols-rounded">person_edit</span>
-              <span>Modifier les informations personnelles</span>
-              <span class="material-symbols-rounded arrow">chevron_right</span>
+          <div class="scroll-content">
+            <div class="tip-card-full">
+              <div class="tip-icon-large">
+                <span class="material-symbols-rounded">lightbulb</span>
+              </div>
+              <h4>Composter en ville</h4>
+              <p>Le saviez-vous ? Même sans jardin, le compostage est possible grâce aux lombricomposteurs ou aux points de collecte municipaux à Liège.</p>
             </div>
+            <p class="tip-card-footer">Plus de conseils à venir...</p>
           </div>
         </section>
       </main>
 
       <nav id="bottom-nav" role="tablist">
-        <a href="home.html" class="nav-item">
+        <a href="accueil.html" class="nav-item">
           <span class="material-symbols-rounded" aria-hidden="true">home</span>
           <span>Accueil</span>
         </a>
-        <a href="tips.html" class="nav-item">
+        <a href="astuces.html" class="nav-item active">
           <span class="material-symbols-rounded" aria-hidden="true">lightbulb</span>
           <span>Astuces</span>
         </a>
-        <a href="home.html" class="nav-item scan-nav-btn" aria-label="Scanner un produit">
+        <a href="accueil.html" class="nav-item scan-nav-btn" aria-label="Scanner un produit">
           <div class="scan-nav-circle">
             <span class="material-symbols-rounded" aria-hidden="true">qr_code_scanner</span>
           </div>
@@ -59,15 +53,22 @@
           <span class="material-symbols-rounded" aria-hidden="true">import_contacts</span>
           <span>Guide</span>
         </a>
-        <a href="profile.html" class="nav-item active">
+        <a href="profil.html" class="nav-item">
           <span class="material-symbols-rounded" aria-hidden="true">person</span>
           <span>Profil</span>
         </a>
       </nav>
-
-      <div id="toast-container" class="ui-layer" style="display: none;" aria-live="assertive"></div>
     </div>
 
-    <script type="module" src="js/profile.js"></script>
+    <script type="module">
+      import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
+      import { auth } from './js/configuration-firebase.js';
+      
+      onAuthStateChanged(auth, (user) => {
+        if (!user) window.location.href = 'authentification.html';
+      });
+    </script>
   </body>
 </html>
+
+

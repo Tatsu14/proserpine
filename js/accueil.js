@@ -1,6 +1,6 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
-import { auth, db } from './firebase-config.js';
-import { DataManager } from './dataManager.js';
+import { auth, db } from './configuration-firebase.js';
+import { DataManager } from './gestionnaire-donnees.js';
 
 let currentUser = null;
 
@@ -8,7 +8,7 @@ const UI = {
   setLoading(show) {
     const loader = document.getElementById("loading-overlay");
     if (loader) {
-      loader.style.display = show ? "flex" : "none";
+      loader.classList.toggle('active', show);
       loader.setAttribute("aria-hidden", !show);
     }
   },
@@ -22,12 +22,12 @@ const UI = {
       <span>${message}</span>
     `;
     container.appendChild(toast);
-    container.style.display = "flex";
+    container.classList.add('active');
     setTimeout(() => {
       toast.style.opacity = "0";
       setTimeout(() => {
         toast.remove();
-        if (container.children.length === 0) container.style.display = "none";
+        if (container.children.length === 0) container.classList.remove('active');
       }, 300);
     }, 3000);
   }
@@ -90,7 +90,7 @@ async function loadAndRenderHistory() {
 
       item.addEventListener("click", () => {
         sessionStorage.setItem('proserpine_current_product', JSON.stringify(product));
-        window.location.href = 'product.html';
+        window.location.href = 'produit.html';
       });
 
       fragment.appendChild(item);
@@ -146,28 +146,27 @@ function renderSearchResults(products) {
     const img = document.createElement("img");
     img.src = p.image_small_url || 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=50';
     img.alt = "";
-    img.style.cssText = "width:36px; height:36px; border-radius:var(--radius-sm); object-fit:cover;";
+    img.className = "suggestion-img";
 
     const textWrapper = document.createElement("div");
     const name = document.createElement("div");
-    name.style.cssText = "font-weight:var(--font-weight-bold); color:var(--color-text-dark);";
+    name.className = "suggestion-name";
     name.textContent = p.product_name_fr || p.product_name || "Sans nom";
     
     const brand = document.createElement("div");
-    brand.style.cssText = "font-size:var(--font-size-xs); color:var(--color-text-muted); opacity:0.8;";
+    brand.className = "suggestion-brand";
     brand.textContent = p.brands || "Marque inconnue";
     
     textWrapper.appendChild(name);
     textWrapper.appendChild(brand);
 
     const left = document.createElement("div");
-    left.style.cssText = "display:flex; align-items:center; gap:var(--space-2);";
+    left.className = "suggestion-left";
     left.appendChild(img);
     left.appendChild(textWrapper);
 
     const chevron = document.createElement("span");
-    chevron.className = "material-symbols-rounded";
-    chevron.style.color = "var(--color-brand-primary)";
+    chevron.className = "material-symbols-rounded suggestion-chevron";
     chevron.textContent = "chevron_right";
 
     item.appendChild(left);
@@ -181,7 +180,7 @@ function renderSearchResults(products) {
           const mapped = DataManager.mapOFFToProserpine(fullProduct);
           await DataManager.saveToHistory(db, currentUser.uid, mapped);
           sessionStorage.setItem('proserpine_current_product', JSON.stringify(mapped));
-          window.location.href = 'product.html';
+          window.location.href = 'produit.html';
         } else {
           UI.showToast("Détails du produit introuvables", "error");
         }
@@ -199,8 +198,10 @@ function renderSearchResults(products) {
 // Auth Guard
 onAuthStateChanged(auth, (user) => {
   if (!user) {
-    window.location.href = 'auth.html';
+    window.location.href = 'authentification.html';
   } else {
     initPage(user);
   }
 });
+
+

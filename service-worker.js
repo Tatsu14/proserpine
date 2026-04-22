@@ -2,25 +2,25 @@ const CACHE_NAME = 'proserpine-v4.0';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/auth.html',
-  '/home.html',
-  '/product.html',
+  '/authentification.html',
+  '/accueil.html',
+  '/produit.html',
   '/guide.html',
-  '/guide-detail.html',
-  '/tips.html',
-  '/profile.html',
-  '/algo.html',
+  '/details-guide.html',
+  '/astuces.html',
+  '/profil.html',
+  '/algorithme.html',
   '/css/style.css',
-  '/js/firebase-config.js',
-  '/js/scoring_engine.js',
-  '/js/logic.js',
-  '/js/dataManager.js',
-  '/js/auth.js',
-  '/js/home.js',
-  '/js/product.js',
-  '/js/guide-detail.js',
-  '/js/profile.js',
-  '/manifest.json'
+  '/js/configuration-firebase.js',
+  '/js/moteur-score.js',
+  '/js/logique.js',
+  '/js/gestionnaire-donnees.js',
+  '/js/authentification.js',
+  '/js/accueil.js',
+  '/js/produit.js',
+  '/js/details-guide.js',
+  '/js/profil.js',
+  '/manifeste.json'
 ];
 
 // Installation : Mise en cache des fichiers de base et activation immédiate
@@ -91,3 +91,4 @@ self.addEventListener('fetch', (event) => {
     })
   );
 });
+

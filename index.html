@@ -5,34 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proserpine — Redirection...</title>
     <link rel="stylesheet" href="css/style.css" />
-    <style>
-      body {
-        background: var(--color-bg-dark);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-      }
-      .loader-container {
-        text-align: center;
-        color: white;
-      }
-      .spinner {
-        width: 40px;
-        height: 40px;
-        border: 4px solid rgba(255, 255, 255, 0.1);
-        border-left-color: var(--color-brand-primary);
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin: 0 auto 20px;
-      }
-      @keyframes spin {
-        to { transform: rotate(360deg); }
-      }
-    </style>
+    <link rel="stylesheet" href="css/splash.css" />
   </head>
-  <body>
+  <body class="splash-mode">
     <div class="loader-container">
       <div class="spinner"></div>
       <p>Chargement de Proserpine...</p>
@@ -40,20 +15,22 @@
 
     <script type="module">
       import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
-      import { auth } from './js/firebase-config.js';
+      import { auth } from './js/configuration-firebase.js';
 
       onAuthStateChanged(auth, (user) => {
         if (user) {
-          window.location.href = 'home.html';
+          window.location.href = 'accueil.html';
         } else {
           const hasAccount = localStorage.getItem('proserpine_has_account');
           if (hasAccount === 'true') {
-            window.location.href = 'auth.html?mode=login';
+            window.location.href = 'authentification.html?mode=login';
           } else {
-            window.location.href = 'auth.html';
+            window.location.href = 'authentification.html';
           }
         }
       });
     </script>
   </body>
 </html>
+
+

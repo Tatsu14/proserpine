@@ -22,3 +22,4 @@ const app = initializeApp(firebaseConfig);
 export const analytics = getAnalytics(app);
 export const auth = getAuth(app); // Gère les mots de passe et la connexion
 export const db = getFirestore(app); // Gère la sauvegarde de l'historique
+

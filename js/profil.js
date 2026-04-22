@@ -1,5 +1,5 @@
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
-import { auth } from './firebase-config.js';
+import { auth } from './configuration-firebase.js';
 
 function showToast(message, type = "success") {
   const container = document.getElementById("toast-container");
@@ -11,12 +11,12 @@ function showToast(message, type = "success") {
     <span>${message}</span>
   `;
   container.appendChild(toast);
-  container.style.display = "flex";
+  container.classList.add('active');
   setTimeout(() => {
     toast.style.opacity = "0";
     setTimeout(() => {
       toast.remove();
-      if (container.children.length === 0) container.style.display = "none";
+      if (container.children.length === 0) container.classList.remove('active');
     }, 300);
   }, 3000);
 }
@@ -29,7 +29,7 @@ function initPage(user) {
     logoutBtn.addEventListener("click", async () => {
       try {
         await signOut(auth);
-        window.location.href = 'auth.html?mode=login';
+        window.location.href = 'authentification.html?mode=login';
       } catch (error) {
         showToast("Erreur lors de la déconnexion", "error");
       }
@@ -39,8 +39,10 @@ function initPage(user) {
 
 onAuthStateChanged(auth, (user) => {
   if (!user) {
-    window.location.href = 'auth.html';
+    window.location.href = 'authentification.html';
   } else {
     initPage(user);
   }
 });
+
+

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-    <link rel="manifest" href="manifest.json" />
+    <link rel="manifest" href="manifeste.json" />
     <meta name="theme-color" content="#071E12" />
   </head>
   <body>
@@ -27,7 +27,7 @@
           </header>
 
           <div class="scroll-content guide-grid">
-            <a href="guide-detail.html?id=pmc" class="guide-card blue-bag" role="button">
+            <a href="details-guide.html?id=pmc" class="guide-card blue-bag" role="button">
               <div class="guide-card-header">
                 <span class="material-symbols-rounded">shopping_bag</span>
                 <h4>Sacs Bleus PMC</h4>
@@ -35,7 +35,7 @@
               <p>Plastiques, Métaux, Cartons à boissons.</p>
             </a>
 
-            <a href="guide-detail.html?id=papier" class="guide-card yellow-box" role="button">
+            <a href="details-guide.html?id=papier" class="guide-card yellow-box" role="button">
               <div class="guide-card-header">
                 <span class="material-symbols-rounded">inventory_2</span>
                 <h4>Papiers / Cartons</h4>
@@ -43,7 +43,7 @@
               <p>Aplatir, retirer les films plastiques.</p>
             </a>
 
-            <a href="guide-detail.html?id=organique" class="guide-card green-bin" role="button">
+            <a href="details-guide.html?id=organique" class="guide-card green-bin" role="button">
               <div class="guide-card-header">
                 <span class="material-symbols-rounded">compost</span>
                 <h4>Organique</h4>
@@ -51,27 +51,43 @@
               <p>Restes de repas, épluchures.</p>
             </a>
 
-            <a href="guide-detail.html?id=verre" class="guide-card glass-bubble" role="button">
+            <a href="details-guide.html?id=verre" class="guide-card glass-bubble" role="button">
               <div class="guide-card-header">
                 <span class="material-symbols-rounded">wine_bar</span>
                 <h4>Bulles à Verre</h4>
               </div>
               <p>Bouteilles et bocaux vides.</p>
             </a>
+
+            <a href="details-guide.html?id=residuel" class="guide-card dark-bin" role="button">
+              <div class="guide-card-header">
+                <span class="material-symbols-rounded">delete_outline</span>
+                <h4>Déchets Résiduels</h4>
+              </div>
+              <p>Langes, poussières, litières.</p>
+            </a>
+
+            <a href="details-guide.html?id=recyparc" class="guide-card red-warning" role="button">
+              <div class="guide-card-header">
+                <span class="material-symbols-rounded">construction</span>
+                <h4>Recyparc</h4>
+              </div>
+              <p>Encombrants, toxiques, électro.</p>
+            </a>
           </div>
         </section>
       </main>
 
       <nav id="bottom-nav" role="tablist">
-        <a href="home.html" class="nav-item">
+        <a href="accueil.html" class="nav-item">
           <span class="material-symbols-rounded" aria-hidden="true">home</span>
           <span>Accueil</span>
         </a>
-        <a href="tips.html" class="nav-item">
+        <a href="astuces.html" class="nav-item">
           <span class="material-symbols-rounded" aria-hidden="true">lightbulb</span>
           <span>Astuces</span>
         </a>
-        <a href="home.html" class="nav-item scan-nav-btn" aria-label="Scanner un produit">
+        <a href="accueil.html" class="nav-item scan-nav-btn" aria-label="Scanner un produit">
           <div class="scan-nav-circle">
             <span class="material-symbols-rounded" aria-hidden="true">qr_code_scanner</span>
           </div>
@@ -80,7 +96,7 @@
           <span class="material-symbols-rounded" aria-hidden="true">import_contacts</span>
           <span>Guide</span>
         </a>
-        <a href="profile.html" class="nav-item">
+        <a href="profil.html" class="nav-item">
           <span class="material-symbols-rounded" aria-hidden="true">person</span>
           <span>Profil</span>
         </a>
@@ -89,11 +105,13 @@
 
     <script type="module">
       import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
-      import { auth } from './js/firebase-config.js';
+      import { auth } from './js/configuration-firebase.js';
       
       onAuthStateChanged(auth, (user) => {
-        if (!user) window.location.href = 'auth.html';
+        if (!user) window.location.href = 'authentification.html';
       });
     </script>
   </body>
 </html>
+
+

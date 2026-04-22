@@ -1,0 +1,100 @@
+/* =============================================================
+   PROSERPINE — COMPONENTS & UTILITIES
+   ============================================================= */
+
+/* Utilitaires */
+.hidden {
+    display: none !important;
+}
+
+/* Couches UI (Toasts, Overlays) 
+   Sont masquées par défaut dans le CSS pour éviter le flash au chargement */
+.ui-layer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--color-overlay-dark-medium, rgba(0, 0, 0, 0.5));
+}
+
+.ui-layer.active {
+    display: flex !important;
+}
+
+/* Suggestion items (Search results) */
+.suggestion-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3);
+    background: var(--color-bg-surface);
+    border-radius: var(--radius-md);
+    border: 0.0625rem solid var(--color-border-default);
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+
+.suggestion-item:active { transform: scale(0.98); }
+
+.suggestion-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.suggestion-img {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+}
+
+.suggestion-name {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+}
+
+.suggestion-brand {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    opacity: 0.8;
+}
+
+.suggestion-chevron {
+    color: var(--color-brand-primary);
+}
+
+/* Section de Débogage (Utilisée dans la fiche produit) */
+.debug-section {
+    margin-top: var(--space-6, 24px);
+    opacity: 0.7;
+}
+
+.debug-section summary {
+    cursor: pointer;
+    font-size: var(--font-size-sm, 12px);
+    color: var(--color-text-muted, #666);
+    font-weight: var(--font-weight-semibold, 600);
+}
+
+.debug-content {
+    background: var(--color-overlay-white-card, rgba(0,0,0,0.05));
+    padding: var(--space-3, 12px);
+    border-radius: var(--radius-sm, 8px);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--font-size-xs, 11px);
+    margin-top: var(--space-2, 8px);
+    white-space: pre-wrap;
+    color: var(--color-text-dark, #333);
+}
+
+/* Input groups (Auth) */
+.input-group.hidden {
+    display: none;
+}

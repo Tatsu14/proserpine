@@ -13,9 +13,11 @@ const FallbackDictionary = {
 };
 
 // --- INITIALISATION DES MOTEURS ---
-// On utilise les classes définies dans scoring_engine.js
+// On utilise les classes définies dans moteur-score.js
 window.ProserpineLogic = {
     Calculator: new (window.ProserpineEngine.CalculatorClass)(),
     Impact: new (window.ProserpineEngine.ImpactClass)(),
     Fallback: FallbackDictionary
 };
+
+
