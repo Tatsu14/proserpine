@@ -4,8 +4,8 @@ import {
   onAuthStateChanged,
   updateProfile,
   sendPasswordResetEmail
-} from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
-import { doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
+} from "firebase/auth";
+import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { auth, db } from './configuration-firebase.js';
 
 let isLoginMode = true;

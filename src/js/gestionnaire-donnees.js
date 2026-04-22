@@ -11,7 +11,7 @@ import {
   limit, 
   getDocs, 
   serverTimestamp 
-} from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
+} from "firebase/firestore";
 
 
 export const DataManager = {

@@ -50,7 +50,11 @@
       <div id="toast-container" class="ui-layer" aria-live="assertive"></div>
     </div>
 
-    <script type="module" src="js/authentification.js"></script>
+    <script type="module">
+      import { uiManager } from './js/components/ui-manager.js';
+      import './js/authentification.js';
+    </script>
+  	<script type="module">import { uiManager } from './js/components/ui-manager.js';</script>
   </body>
 </html>
 

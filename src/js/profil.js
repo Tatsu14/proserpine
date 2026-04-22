@@ -1,4 +1,4 @@
-import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from './configuration-firebase.js';
 
 function showToast(message, type = "success") {

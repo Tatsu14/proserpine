@@ -1,4 +1,4 @@
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from './configuration-firebase.js';
 import { GuideManager } from './gestionnaire-guide.js';
 

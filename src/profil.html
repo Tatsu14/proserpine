@@ -41,34 +41,15 @@
         </section>
       </main>
 
-      <nav id="bottom-nav" role="tablist">
-        <a href="accueil.html" class="nav-item">
-          <span class="material-symbols-rounded" aria-hidden="true">home</span>
-          <span>Accueil</span>
-        </a>
-        <a href="astuces.html" class="nav-item">
-          <span class="material-symbols-rounded" aria-hidden="true">lightbulb</span>
-          <span>Astuces</span>
-        </a>
-        <a href="accueil.html" class="nav-item scan-nav-btn" aria-label="Scanner un produit">
-          <div class="scan-nav-circle">
-            <span class="material-symbols-rounded" aria-hidden="true">qr_code_scanner</span>
-          </div>
-        </a>
-        <a href="guide.html" class="nav-item">
-          <span class="material-symbols-rounded" aria-hidden="true">import_contacts</span>
-          <span>Guide</span>
-        </a>
-        <a href="profil.html" class="nav-item active">
-          <span class="material-symbols-rounded" aria-hidden="true">person</span>
-          <span>Profil</span>
-        </a>
-      </nav>
-
+      <div id="navbar-placeholder"></div>
       <div id="toast-container" class="ui-layer" aria-live="assertive"></div>
     </div>
 
-    <script type="module" src="js/profil.js"></script>
+    <script type="module">
+      import { uiManager } from './js/components/ui-manager.js';
+      import './js/profil.js';
+    </script>
+  	<script type="module">import { uiManager } from './js/components/ui-manager.js';</script>
   </body>
 </html>
 

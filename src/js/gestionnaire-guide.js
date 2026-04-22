@@ -10,7 +10,7 @@ import {
   collection, 
   setDoc,
   serverTimestamp 
-} from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
+} from "firebase/firestore";
 import { db } from './configuration-firebase.js';
 
 const CACHE_KEY = 'proserpine_guide_cache';

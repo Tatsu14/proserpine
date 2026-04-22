@@ -42,7 +42,7 @@
     </div>
 
     <script type="module">
-      import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
+      import { onAuthStateChanged } from "firebase/auth";
       import { auth } from './js/configuration-firebase.js';
 
       onAuthStateChanged(auth, (user) => {
@@ -55,6 +55,7 @@
         window.location.href = 'profil.html';
       });
     </script>
+  	<script type="module">import { uiManager } from './js/components/ui-manager.js';</script>
   </body>
 </html>
 
